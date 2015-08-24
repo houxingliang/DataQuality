@@ -1,0 +1,17 @@
+c:\users\houxingliang\documents\visual studio 2013\Projects\DataQuality\DataQuality\bin\Debug\DataQuality.exe
+c:\users\houxingliang\documents\visual studio 2013\Projects\DataQuality\DataQuality\bin\Debug\DataQuality.pdb
+c:\users\houxingliang\documents\visual studio 2013\Projects\DataQuality\DataQuality\obj\Debug\DataQuality.MainFrm.resources
+c:\users\houxingliang\documents\visual studio 2013\Projects\DataQuality\DataQuality\obj\Debug\DataQuality.Properties.Resources.resources
+c:\users\houxingliang\documents\visual studio 2013\Projects\DataQuality\DataQuality\obj\Debug\DataQuality.csproj.GenerateResource.Cache
+c:\users\houxingliang\documents\visual studio 2013\Projects\DataQuality\DataQuality\obj\Debug\DataQuality.exe
+c:\users\houxingliang\documents\visual studio 2013\Projects\DataQuality\DataQuality\obj\Debug\DataQuality.pdb
+c:\users\houxingliang\documents\visual studio 2013\Projects\DataQuality\DataQuality\obj\Debug\DataQuality.MainCrl.resources
+C:\Users\HouXingliang\documents\visual studio 2013\Projects\DataQuality\DataQuality\obj\Debug\DataQuality.ZBBZDPZCrl.resources
+C:\Users\HouXingliang\Documents\Visual Studio 2013\Projects\DataQuality\DataQuality\obj\Debug\DataQuality.CGMLPZCrl.resources
+C:\Users\HouXingliang\Documents\Visual Studio 2013\Projects\DataQuality\DataQuality\obj\Debug\DataQuality.CGWJPZCrl.resources
+C:\Users\HouXingliang\Documents\Visual Studio 2013\Projects\DataQuality\DataQuality\obj\Debug\DataQuality.GZPZCrl.resources
+C:\Users\HouXingliang\Documents\Visual Studio 2013\Projects\DataQuality\DataQuality\obj\Debug\DataQuality.ZDCrl.resources
+C:\Users\HouXingliang\documents\visual studio 2013\Projects\DataQuality\DataQuality\obj\Debug\DataQuality.XZQHBMCrl.resources
+C:\Users\HouXingliang\documents\visual studio 2013\Projects\DataQuality\DataQuality\bin\Debug\Setting.accdb
+C:\Users\HouXingliang\documents\visual studio 2013\Projects\DataQuality\DataQuality\bin\Debug\DataQuality.exe.config
+C:\Users\HouXingliang\documents\visual studio 2013\Projects\DataQuality\DataQuality\obj\Debug\DataQuality.csprojResolveAssemblyReference.cache

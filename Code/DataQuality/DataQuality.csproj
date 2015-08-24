@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AD03A2B8-1842-46EE-A271-AF12883855D9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataQuality</RootNamespace>
+    <AssemblyName>DataQuality</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CGMLPZCrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CGMLPZCrl.Designer.cs">
+      <DependentUpon>CGMLPZCrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CGMLPZFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CGMLPZFrm.Designer.cs">
+      <DependentUpon>CGMLPZFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CGWJPZCrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CGWJPZCrl.Designer.cs">
+      <DependentUpon>CGWJPZCrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CGWJPZFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CGWJPZFrm.Designer.cs">
+      <DependentUpon>CGWJPZFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\AccessHelper.cs" />
+    <Compile Include="Common\ComMsg.cs" />
+    <Compile Include="GZPZCrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GZPZCrl.Designer.cs">
+      <DependentUpon>GZPZCrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GZPZFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GZPZFrm.Designer.cs">
+      <DependentUpon>GZPZFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper.cs" />
+    <Compile Include="MainCrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainCrl.Designer.cs">
+      <DependentUpon>MainCrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrm.Designer.cs">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DataSet\SettingDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SettingDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\SettingDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SettingDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\SettingDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SettingDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="XmlHelper.cs" />
+    <Compile Include="XZQHBMCrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="XZQHBMCrl.Designer.cs">
+      <DependentUpon>XZQHBMCrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZBBPZFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZBBPZFrm.Designer.cs">
+      <DependentUpon>ZBBPZFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZBBZDPZCrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ZBBZDPZCrl.Designer.cs">
+      <DependentUpon>ZBBZDPZCrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZDCrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ZDCrl.Designer.cs">
+      <DependentUpon>ZDCrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZDFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZDFrm.Designer.cs">
+      <DependentUpon>ZDFrm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CGMLPZCrl.resx">
+      <DependentUpon>CGMLPZCrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CGMLPZFrm.resx">
+      <DependentUpon>CGMLPZFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CGWJPZCrl.resx">
+      <DependentUpon>CGWJPZCrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CGWJPZFrm.resx">
+      <DependentUpon>CGWJPZFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GZPZCrl.resx">
+      <DependentUpon>GZPZCrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GZPZFrm.resx">
+      <DependentUpon>GZPZFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainCrl.resx">
+      <DependentUpon>MainCrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrm.resx">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="XZQHBMCrl.resx">
+      <DependentUpon>XZQHBMCrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZBBPZFrm.resx">
+      <DependentUpon>ZBBPZFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZBBZDPZCrl.resx">
+      <DependentUpon>ZBBZDPZCrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZDCrl.resx">
+      <DependentUpon>ZDCrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZDFrm.resx">
+      <DependentUpon>ZDFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="DataSet\SettingDataSet.xsc">
+      <DependentUpon>SettingDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\SettingDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SettingDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\SettingDataSet.xss">
+      <DependentUpon>SettingDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\SettingDataSet1.xsc">
+      <DependentUpon>SettingDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\SettingDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SettingDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\SettingDataSet1.xss">
+      <DependentUpon>SettingDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\SettingDataSet3.xsc">
+      <DependentUpon>SettingDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\SettingDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SettingDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\SettingDataSet3.xss">
+      <DependentUpon>SettingDataSet3.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PeiZhi.xml" />
+    <Content Include="Setting.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

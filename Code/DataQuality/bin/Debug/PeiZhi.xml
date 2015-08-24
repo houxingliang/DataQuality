@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Message>
+  <!--检查类别-->
+  <CheckType>
+    <TypeMsg>
+      <TypeName name="省级质检">省级质检</TypeName>
+    </TypeMsg>
+    <TypeMsg>
+      <TypeName name="县级质检">县级质检</TypeName>
+    </TypeMsg>
+  </CheckType>
+</Message>
