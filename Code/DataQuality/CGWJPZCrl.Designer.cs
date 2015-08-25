@@ -64,7 +64,7 @@ namespace DataQuality
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(985, 633);
+            this.dataGridView1.Size = new System.Drawing.Size(985, 550);
             this.dataGridView1.TabIndex = 2;
             // 
             // wenJianBindingSource
@@ -79,7 +79,7 @@ namespace DataQuality
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(910, 639);
+            this.btnDel.Location = new System.Drawing.Point(910, 556);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 23);
             this.btnDel.TabIndex = 5;
@@ -89,7 +89,7 @@ namespace DataQuality
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(828, 639);
+            this.btnEdit.Location = new System.Drawing.Point(828, 556);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 6;
@@ -99,7 +99,7 @@ namespace DataQuality
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(741, 639);
+            this.btnAdd.Location = new System.Drawing.Point(741, 556);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 7;
@@ -162,7 +162,7 @@ namespace DataQuality
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dataGridView1);
             this.Name = "CGWJPZCrl";
-            this.Size = new System.Drawing.Size(985, 672);
+            this.Size = new System.Drawing.Size(985, 590);
             this.Load += new System.EventHandler(this.CGWJPZCrl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wenJianBindingSource)).EndInit();

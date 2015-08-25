@@ -47,6 +47,8 @@ namespace DataQuality
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -56,9 +58,10 @@ namespace DataQuality
             this.dataGridView1.DataSource = this.muLuBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(985, 633);
+            this.dataGridView1.Size = new System.Drawing.Size(985, 550);
             this.dataGridView1.TabIndex = 2;
             // 
             // iDDataGridViewTextBoxColumn
@@ -66,6 +69,7 @@ namespace DataQuality
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
             this.iDDataGridViewTextBoxColumn.HeaderText = "序号";
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 目录名称DataGridViewTextBoxColumn
             // 
@@ -73,12 +77,14 @@ namespace DataQuality
             this.目录名称DataGridViewTextBoxColumn.DataPropertyName = "目录名称";
             this.目录名称DataGridViewTextBoxColumn.HeaderText = "目录名称";
             this.目录名称DataGridViewTextBoxColumn.Name = "目录名称DataGridViewTextBoxColumn";
+            this.目录名称DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 检查级别DataGridViewTextBoxColumn
             // 
             this.检查级别DataGridViewTextBoxColumn.DataPropertyName = "检查级别";
             this.检查级别DataGridViewTextBoxColumn.HeaderText = "检查级别";
             this.检查级别DataGridViewTextBoxColumn.Name = "检查级别DataGridViewTextBoxColumn";
+            this.检查级别DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // muLuBindingSource
             // 
@@ -92,7 +98,7 @@ namespace DataQuality
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(910, 639);
+            this.btnDel.Location = new System.Drawing.Point(910, 556);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 23);
             this.btnDel.TabIndex = 5;
@@ -102,7 +108,7 @@ namespace DataQuality
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(827, 639);
+            this.btnEdit.Location = new System.Drawing.Point(827, 556);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 6;
@@ -112,7 +118,7 @@ namespace DataQuality
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(741, 639);
+            this.btnAdd.Location = new System.Drawing.Point(741, 556);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 7;
@@ -133,7 +139,7 @@ namespace DataQuality
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dataGridView1);
             this.Name = "CGMLPZCrl";
-            this.Size = new System.Drawing.Size(985, 672);
+            this.Size = new System.Drawing.Size(985, 590);
             this.Load += new System.EventHandler(this.CGMLPZCrl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.muLuBindingSource)).EndInit();
@@ -152,7 +158,7 @@ namespace DataQuality
         private System.Windows.Forms.DataGridViewTextBoxColumn 目录名称DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 检查级别DataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource muLuBindingSource;
-        private SettingDataSet settingDataSet;
         private DataQuality.DataSet.SettingDataSetTableAdapters.MuLuTableAdapter muLuTableAdapter;
+        private SettingDataSet settingDataSet;
     }
 }

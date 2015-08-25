@@ -88,6 +88,7 @@
       <DependentUpon>CGWJPZFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Common\AccessHelper.cs" />
+    <Compile Include="Common\CheckPath.cs" />
     <Compile Include="Common\ComMsg.cs" />
     <Compile Include="GZPZCrl.cs">
       <SubType>UserControl</SubType>
@@ -101,7 +102,7 @@
     <Compile Include="GZPZFrm.Designer.cs">
       <DependentUpon>GZPZFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helper.cs" />
+    <Compile Include="Common\Helper.cs" />
     <Compile Include="MainCrl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -131,12 +132,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SettingDataSet3.xsd</DependentUpon>
     </Compile>
-    <Compile Include="XmlHelper.cs" />
+    <Compile Include="Common\XmlHelper.cs" />
     <Compile Include="XZQHBMCrl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="XZQHBMCrl.Designer.cs">
       <DependentUpon>XZQHBMCrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XZQHBMFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XZQHBMFrm.Designer.cs">
+      <DependentUpon>XZQHBMFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="ZBBPZFrm.cs">
       <SubType>Form</SubType>
@@ -197,6 +204,9 @@
     </Compile>
     <EmbeddedResource Include="XZQHBMCrl.resx">
       <DependentUpon>XZQHBMCrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XZQHBMFrm.resx">
+      <DependentUpon>XZQHBMFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ZBBPZFrm.resx">
       <DependentUpon>ZBBPZFrm.cs</DependentUpon>

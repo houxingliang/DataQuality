@@ -43,6 +43,12 @@ namespace DataQuality
             this.clLZDDM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clZDMC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clPX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.类型编码DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.类型名称DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.字典代码DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.字典名称DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.排序DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ziDianBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.settingDataSet1)).BeginInit();
@@ -50,6 +56,8 @@ namespace DataQuality
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -58,13 +66,20 @@ namespace DataQuality
             this.clLXMC,
             this.clLZDDM,
             this.clZDMC,
-            this.clPX});
+            this.clPX,
+            this.iDDataGridViewTextBoxColumn,
+            this.类型编码DataGridViewTextBoxColumn,
+            this.类型名称DataGridViewTextBoxColumn,
+            this.字典代码DataGridViewTextBoxColumn,
+            this.字典名称DataGridViewTextBoxColumn,
+            this.排序DataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.ziDianBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(985, 633);
+            this.dataGridView1.Size = new System.Drawing.Size(985, 550);
             this.dataGridView1.TabIndex = 1;
             // 
             // ziDianBindingSource
@@ -79,7 +94,7 @@ namespace DataQuality
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(907, 639);
+            this.btnDel.Location = new System.Drawing.Point(910, 556);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 23);
             this.btnDel.TabIndex = 2;
@@ -89,7 +104,7 @@ namespace DataQuality
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(826, 639);
+            this.btnEdit.Location = new System.Drawing.Point(829, 556);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 3;
@@ -99,7 +114,7 @@ namespace DataQuality
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(741, 639);
+            this.btnAdd.Location = new System.Drawing.Point(744, 556);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 4;
@@ -124,6 +139,7 @@ namespace DataQuality
             this.clLXBM.DataPropertyName = "类型编码";
             this.clLXBM.HeaderText = "类型编码";
             this.clLXBM.Name = "clLXBM";
+            this.clLXBM.ReadOnly = true;
             this.clLXBM.Width = 150;
             // 
             // clLXMC
@@ -132,12 +148,14 @@ namespace DataQuality
             this.clLXMC.DataPropertyName = "类型名称";
             this.clLXMC.HeaderText = "类型名称";
             this.clLXMC.Name = "clLXMC";
+            this.clLXMC.ReadOnly = true;
             // 
             // clLZDDM
             // 
             this.clLZDDM.DataPropertyName = "字典代码";
             this.clLZDDM.HeaderText = "字典代码";
             this.clLZDDM.Name = "clLZDDM";
+            this.clLZDDM.ReadOnly = true;
             this.clLZDDM.Width = 150;
             // 
             // clZDMC
@@ -146,12 +164,56 @@ namespace DataQuality
             this.clZDMC.DataPropertyName = "字典名称";
             this.clZDMC.HeaderText = "字典名称";
             this.clZDMC.Name = "clZDMC";
+            this.clZDMC.ReadOnly = true;
             // 
             // clPX
             // 
             this.clPX.DataPropertyName = "排序";
             this.clPX.HeaderText = "排序";
             this.clPX.Name = "clPX";
+            this.clPX.ReadOnly = true;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 类型编码DataGridViewTextBoxColumn
+            // 
+            this.类型编码DataGridViewTextBoxColumn.DataPropertyName = "类型编码";
+            this.类型编码DataGridViewTextBoxColumn.HeaderText = "类型编码";
+            this.类型编码DataGridViewTextBoxColumn.Name = "类型编码DataGridViewTextBoxColumn";
+            this.类型编码DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 类型名称DataGridViewTextBoxColumn
+            // 
+            this.类型名称DataGridViewTextBoxColumn.DataPropertyName = "类型名称";
+            this.类型名称DataGridViewTextBoxColumn.HeaderText = "类型名称";
+            this.类型名称DataGridViewTextBoxColumn.Name = "类型名称DataGridViewTextBoxColumn";
+            this.类型名称DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 字典代码DataGridViewTextBoxColumn
+            // 
+            this.字典代码DataGridViewTextBoxColumn.DataPropertyName = "字典代码";
+            this.字典代码DataGridViewTextBoxColumn.HeaderText = "字典代码";
+            this.字典代码DataGridViewTextBoxColumn.Name = "字典代码DataGridViewTextBoxColumn";
+            this.字典代码DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 字典名称DataGridViewTextBoxColumn
+            // 
+            this.字典名称DataGridViewTextBoxColumn.DataPropertyName = "字典名称";
+            this.字典名称DataGridViewTextBoxColumn.HeaderText = "字典名称";
+            this.字典名称DataGridViewTextBoxColumn.Name = "字典名称DataGridViewTextBoxColumn";
+            this.字典名称DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 排序DataGridViewTextBoxColumn
+            // 
+            this.排序DataGridViewTextBoxColumn.DataPropertyName = "排序";
+            this.排序DataGridViewTextBoxColumn.HeaderText = "排序";
+            this.排序DataGridViewTextBoxColumn.Name = "排序DataGridViewTextBoxColumn";
+            this.排序DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ZDCrl
             // 
@@ -162,7 +224,7 @@ namespace DataQuality
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dataGridView1);
             this.Name = "ZDCrl";
-            this.Size = new System.Drawing.Size(985, 672);
+            this.Size = new System.Drawing.Size(985, 590);
             this.Load += new System.EventHandler(this.ZDCrl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ziDianBindingSource)).EndInit();
@@ -186,5 +248,11 @@ namespace DataQuality
         private System.Windows.Forms.DataGridViewTextBoxColumn clLZDDM;
         private System.Windows.Forms.DataGridViewTextBoxColumn clZDMC;
         private System.Windows.Forms.DataGridViewTextBoxColumn clPX;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 类型编码DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 类型名称DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 字典代码DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 字典名称DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 排序DataGridViewTextBoxColumn;
     }
 }

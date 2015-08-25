@@ -10,6 +10,7 @@ using System.Xml;
 using System.Web;
 using System.IO;
 using System.Web.UI.WebControls;
+using DataQuality.Common;
 
 namespace DataQuality
 {
@@ -68,7 +69,7 @@ namespace DataQuality
                     cmbType.SelectedItem = cmbType.Items[0];
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
                 MessageBox.Show("未检测到'PeiZhi.xml'文件");
             }
@@ -83,6 +84,21 @@ namespace DataQuality
         private void PaintTreeView(System.Windows.Forms.TreeView treeView,string fullPath)
         {
 
+        }
+        /// <summary>
+        /// 检查事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            //检查文件路径
+            if (cbJGFHX.Checked)
+            {
+                CheckPath checkPath = new CheckPath();
+                checkPath.CheckPathMsg(tbBrowse.Text, this);
+   
+            }
         }
 
 

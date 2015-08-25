@@ -31,12 +31,6 @@ namespace DataQuality
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.guiZeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.settingDataSet3 = new DataQuality.DataSet.SettingDataSet3();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.guiZeTableAdapter = new DataQuality.DataSet.SettingDataSet3TableAdapters.GuiZeTableAdapter();
             this.clXH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.规则类型DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.规则编号DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +43,12 @@ namespace DataQuality
             this.表名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.字段名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.是否检查DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.guiZeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.settingDataSet3 = new DataQuality.DataSet.SettingDataSet3();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.guiZeTableAdapter = new DataQuality.DataSet.SettingDataSet3TableAdapters.GuiZeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guiZeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.settingDataSet3)).BeginInit();
@@ -76,52 +76,8 @@ namespace DataQuality
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(985, 633);
+            this.dataGridView1.Size = new System.Drawing.Size(985, 550);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // guiZeBindingSource
-            // 
-            this.guiZeBindingSource.DataMember = "GuiZe";
-            this.guiZeBindingSource.DataSource = this.settingDataSet3;
-            // 
-            // settingDataSet3
-            // 
-            this.settingDataSet3.DataSetName = "SettingDataSet3";
-            this.settingDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // btnDel
-            // 
-            this.btnDel.Location = new System.Drawing.Point(907, 639);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(75, 23);
-            this.btnDel.TabIndex = 5;
-            this.btnDel.Text = "删除";
-            this.btnDel.UseVisualStyleBackColor = true;
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(822, 639);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 6;
-            this.btnEdit.Text = "修改";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(741, 639);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 7;
-            this.btnAdd.Text = "新增";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // guiZeTableAdapter
-            // 
-            this.guiZeTableAdapter.ClearBeforeFill = true;
             // 
             // clXH
             // 
@@ -197,6 +153,50 @@ namespace DataQuality
             this.是否检查DataGridViewCheckBoxColumn.HeaderText = "是否检查";
             this.是否检查DataGridViewCheckBoxColumn.Name = "是否检查DataGridViewCheckBoxColumn";
             // 
+            // guiZeBindingSource
+            // 
+            this.guiZeBindingSource.DataMember = "GuiZe";
+            this.guiZeBindingSource.DataSource = this.settingDataSet3;
+            // 
+            // settingDataSet3
+            // 
+            this.settingDataSet3.DataSetName = "SettingDataSet3";
+            this.settingDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnDel
+            // 
+            this.btnDel.Location = new System.Drawing.Point(910, 556);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(75, 23);
+            this.btnDel.TabIndex = 5;
+            this.btnDel.Text = "删除";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(825, 556);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 6;
+            this.btnEdit.Text = "修改";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(744, 556);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 7;
+            this.btnAdd.Text = "新增";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // guiZeTableAdapter
+            // 
+            this.guiZeTableAdapter.ClearBeforeFill = true;
+            // 
             // GZPZCrl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -206,7 +206,7 @@ namespace DataQuality
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dataGridView1);
             this.Name = "GZPZCrl";
-            this.Size = new System.Drawing.Size(985, 672);
+            this.Size = new System.Drawing.Size(985, 590);
             this.Load += new System.EventHandler(this.GZPZCrl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guiZeBindingSource)).EndInit();

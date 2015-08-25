@@ -36,12 +36,12 @@
             this.btnBrowse = new System.Windows.Forms.Button();
             this.tbBrowse = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbHZBG = new System.Windows.Forms.CheckBox();
+            this.cbKJTX = new System.Windows.Forms.CheckBox();
+            this.cbLJGLX = new System.Windows.Forms.CheckBox();
+            this.cbJCZB = new System.Windows.Forms.CheckBox();
+            this.cbJGFHX = new System.Windows.Forms.CheckBox();
+            this.cbSJWZX = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.checkBox8 = new System.Windows.Forms.CheckBox();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
@@ -52,7 +52,7 @@
             this.tpJCJG = new System.Windows.Forms.TabPage();
             this.tpTXYL = new System.Windows.Forms.TabPage();
             this.tpRZ = new System.Windows.Forms.TabPage();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtbLog = new System.Windows.Forms.RichTextBox();
             this.btnCheck = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -112,12 +112,12 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.checkBox6);
-            this.groupBox3.Controls.Add(this.checkBox5);
-            this.groupBox3.Controls.Add(this.checkBox4);
-            this.groupBox3.Controls.Add(this.checkBox3);
-            this.groupBox3.Controls.Add(this.checkBox2);
-            this.groupBox3.Controls.Add(this.checkBox1);
+            this.groupBox3.Controls.Add(this.cbHZBG);
+            this.groupBox3.Controls.Add(this.cbKJTX);
+            this.groupBox3.Controls.Add(this.cbLJGLX);
+            this.groupBox3.Controls.Add(this.cbJCZB);
+            this.groupBox3.Controls.Add(this.cbJGFHX);
+            this.groupBox3.Controls.Add(this.cbSJWZX);
             this.groupBox3.Location = new System.Drawing.Point(3, 78);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(650, 54);
@@ -125,75 +125,75 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "检查内容";
             // 
-            // checkBox6
+            // cbHZBG
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Checked = true;
-            this.checkBox6.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox6.Location = new System.Drawing.Point(557, 20);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(72, 16);
-            this.checkBox6.TabIndex = 0;
-            this.checkBox6.Text = "汇总表格";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.cbHZBG.AutoSize = true;
+            this.cbHZBG.Checked = true;
+            this.cbHZBG.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbHZBG.Location = new System.Drawing.Point(557, 20);
+            this.cbHZBG.Name = "cbHZBG";
+            this.cbHZBG.Size = new System.Drawing.Size(72, 16);
+            this.cbHZBG.TabIndex = 0;
+            this.cbHZBG.Text = "汇总表格";
+            this.cbHZBG.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // cbKJTX
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(454, 20);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(72, 16);
-            this.checkBox5.TabIndex = 0;
-            this.checkBox5.Text = "空间图形";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.cbKJTX.AutoSize = true;
+            this.cbKJTX.Location = new System.Drawing.Point(454, 20);
+            this.cbKJTX.Name = "cbKJTX";
+            this.cbKJTX.Size = new System.Drawing.Size(72, 16);
+            this.cbKJTX.TabIndex = 0;
+            this.cbKJTX.Text = "空间图形";
+            this.cbKJTX.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // cbLJGLX
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Checked = true;
-            this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox4.Location = new System.Drawing.Point(339, 20);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(84, 16);
-            this.checkBox4.TabIndex = 0;
-            this.checkBox4.Text = "逻辑关联性";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.cbLJGLX.AutoSize = true;
+            this.cbLJGLX.Checked = true;
+            this.cbLJGLX.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbLJGLX.Location = new System.Drawing.Point(339, 20);
+            this.cbLJGLX.Name = "cbLJGLX";
+            this.cbLJGLX.Size = new System.Drawing.Size(84, 16);
+            this.cbLJGLX.TabIndex = 0;
+            this.cbLJGLX.Text = "逻辑关联性";
+            this.cbLJGLX.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // cbJCZB
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Checked = true;
-            this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox3.Location = new System.Drawing.Point(236, 20);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(72, 16);
-            this.checkBox3.TabIndex = 0;
-            this.checkBox3.Text = "基础指标";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.cbJCZB.AutoSize = true;
+            this.cbJCZB.Checked = true;
+            this.cbJCZB.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbJCZB.Location = new System.Drawing.Point(236, 20);
+            this.cbJCZB.Name = "cbJCZB";
+            this.cbJCZB.Size = new System.Drawing.Size(72, 16);
+            this.cbJCZB.TabIndex = 0;
+            this.cbJCZB.Text = "基础指标";
+            this.cbJCZB.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // cbJGFHX
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Checked = true;
-            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox2.Location = new System.Drawing.Point(121, 20);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(84, 16);
-            this.checkBox2.TabIndex = 0;
-            this.checkBox2.Text = "结构符合性";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.cbJGFHX.AutoSize = true;
+            this.cbJGFHX.Checked = true;
+            this.cbJGFHX.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbJGFHX.Location = new System.Drawing.Point(121, 20);
+            this.cbJGFHX.Name = "cbJGFHX";
+            this.cbJGFHX.Size = new System.Drawing.Size(84, 16);
+            this.cbJGFHX.TabIndex = 0;
+            this.cbJGFHX.Text = "结构符合性";
+            this.cbJGFHX.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // cbSJWZX
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(6, 20);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(84, 16);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "数据完整性";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbSJWZX.AutoSize = true;
+            this.cbSJWZX.Checked = true;
+            this.cbSJWZX.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbSJWZX.Location = new System.Drawing.Point(6, 20);
+            this.cbSJWZX.Name = "cbSJWZX";
+            this.cbSJWZX.Size = new System.Drawing.Size(84, 16);
+            this.cbSJWZX.TabIndex = 0;
+            this.cbSJWZX.Text = "数据完整性";
+            this.cbSJWZX.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
@@ -239,7 +239,7 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 138);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(979, 531);
+            this.tabControl1.Size = new System.Drawing.Size(966, 470);
             this.tabControl1.TabIndex = 4;
             // 
             // tpCGMLJG
@@ -248,7 +248,7 @@
             this.tpCGMLJG.Location = new System.Drawing.Point(4, 22);
             this.tpCGMLJG.Name = "tpCGMLJG";
             this.tpCGMLJG.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCGMLJG.Size = new System.Drawing.Size(971, 505);
+            this.tpCGMLJG.Size = new System.Drawing.Size(958, 444);
             this.tpCGMLJG.TabIndex = 0;
             this.tpCGMLJG.Text = "成果目录结构";
             this.tpCGMLJG.UseVisualStyleBackColor = true;
@@ -260,7 +260,7 @@
             this.treeView1.Location = new System.Drawing.Point(6, 6);
             this.treeView1.Name = "treeView1";
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(959, 493);
+            this.treeView1.Size = new System.Drawing.Size(946, 434);
             this.treeView1.StateImageList = this.imageList1;
             this.treeView1.TabIndex = 0;
             // 
@@ -276,7 +276,7 @@
             this.tpJCJG.Location = new System.Drawing.Point(4, 22);
             this.tpJCJG.Name = "tpJCJG";
             this.tpJCJG.Padding = new System.Windows.Forms.Padding(3);
-            this.tpJCJG.Size = new System.Drawing.Size(971, 505);
+            this.tpJCJG.Size = new System.Drawing.Size(971, 374);
             this.tpJCJG.TabIndex = 1;
             this.tpJCJG.Text = "检查结果";
             this.tpJCJG.UseVisualStyleBackColor = true;
@@ -285,32 +285,32 @@
             // 
             this.tpTXYL.Location = new System.Drawing.Point(4, 22);
             this.tpTXYL.Name = "tpTXYL";
-            this.tpTXYL.Size = new System.Drawing.Size(971, 505);
+            this.tpTXYL.Size = new System.Drawing.Size(971, 374);
             this.tpTXYL.TabIndex = 2;
             this.tpTXYL.Text = "图形预览";
             this.tpTXYL.UseVisualStyleBackColor = true;
             // 
             // tpRZ
             // 
-            this.tpRZ.Controls.Add(this.richTextBox1);
+            this.tpRZ.Controls.Add(this.rtbLog);
             this.tpRZ.Location = new System.Drawing.Point(4, 22);
             this.tpRZ.Name = "tpRZ";
-            this.tpRZ.Size = new System.Drawing.Size(971, 505);
+            this.tpRZ.Size = new System.Drawing.Size(958, 444);
             this.tpRZ.TabIndex = 3;
             this.tpRZ.Text = "日志";
             this.tpRZ.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // rtbLog
             // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.InfoText;
-            this.richTextBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.richTextBox1.ForeColor = System.Drawing.Color.LimeGreen;
-            this.richTextBox1.Location = new System.Drawing.Point(2, 3);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(966, 466);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "准备打印文档....";
+            this.rtbLog.BackColor = System.Drawing.SystemColors.InfoText;
+            this.rtbLog.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.rtbLog.ForeColor = System.Drawing.Color.LimeGreen;
+            this.rtbLog.Location = new System.Drawing.Point(2, 3);
+            this.rtbLog.Name = "rtbLog";
+            this.rtbLog.ReadOnly = true;
+            this.rtbLog.Size = new System.Drawing.Size(966, 460);
+            this.rtbLog.TabIndex = 0;
+            this.rtbLog.Text = "准备打印文档....";
             // 
             // btnCheck
             // 
@@ -320,6 +320,7 @@
             this.btnCheck.TabIndex = 5;
             this.btnCheck.Text = "检查";
             this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // MainCrl
             // 
@@ -332,7 +333,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "MainCrl";
-            this.Size = new System.Drawing.Size(985, 672);
+            this.Size = new System.Drawing.Size(985, 590);
             this.Load += new System.EventHandler(this.MainCrl_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -360,19 +361,19 @@
         private System.Windows.Forms.TabPage tpTXYL;
         private System.Windows.Forms.TabPage tpRZ;
         private System.Windows.Forms.ComboBox cmbType;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cbHZBG;
+        private System.Windows.Forms.CheckBox cbKJTX;
+        private System.Windows.Forms.CheckBox cbLJGLX;
+        private System.Windows.Forms.CheckBox cbJCZB;
+        private System.Windows.Forms.CheckBox cbJGFHX;
+        private System.Windows.Forms.CheckBox cbSJWZX;
         private System.Windows.Forms.CheckBox checkBox8;
         private System.Windows.Forms.CheckBox checkBox7;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.TextBox tbBrowse;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        public System.Windows.Forms.RichTextBox rtbLog;
         private System.Windows.Forms.Button btnCheck;
     }
 }
