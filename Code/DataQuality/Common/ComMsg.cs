@@ -39,5 +39,17 @@ namespace DataQuality.Common
             {"Q","地役变更登记(Q)"},
             {"R","地役注销登记(R)"}
         };
+        /// <summary>
+        /// 检查结果
+        /// </summary>
+        public static List<ResultEntity> ResultShow = new List<ResultEntity>();
+        /// <summary>
+        /// xls文件路径
+        /// </summary>
+        public static string xlsPath = string.Empty;
+        /// <summary>
+        /// doc文件路径
+        /// </summary>
+        public static string docPath = string.Empty;
     }
 }

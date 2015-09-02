@@ -31,20 +31,16 @@ namespace DataQuality
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.clXH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clXZQBM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clXZQMC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clFJBM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quHuaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.settingDataSet = new DataQuality.DataSet.SettingDataSet();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.quHuaTableAdapter = new DataQuality.DataSet.SettingDataSetTableAdapters.QuHuaTableAdapter();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.行政区编码DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.行政区名称DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.父级编码DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clXH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clXZQBM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clXZQMC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clFJBM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quHuaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.settingDataSet)).BeginInit();
@@ -60,11 +56,7 @@ namespace DataQuality
             this.clXH,
             this.clXZQBM,
             this.clXZQMC,
-            this.clFJBM,
-            this.iDDataGridViewTextBoxColumn,
-            this.行政区编码DataGridViewTextBoxColumn,
-            this.行政区名称DataGridViewTextBoxColumn,
-            this.父级编码DataGridViewTextBoxColumn});
+            this.clFJBM});
             this.dataGridView1.DataSource = this.quHuaBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
@@ -73,38 +65,6 @@ namespace DataQuality
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(985, 550);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // clXH
-            // 
-            this.clXH.DataPropertyName = "ID";
-            this.clXH.HeaderText = "序号";
-            this.clXH.Name = "clXH";
-            this.clXH.ReadOnly = true;
-            this.clXH.Width = 60;
-            // 
-            // clXZQBM
-            // 
-            this.clXZQBM.DataPropertyName = "行政区编码";
-            this.clXZQBM.HeaderText = "行政区编码";
-            this.clXZQBM.Name = "clXZQBM";
-            this.clXZQBM.ReadOnly = true;
-            this.clXZQBM.Width = 200;
-            // 
-            // clXZQMC
-            // 
-            this.clXZQMC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clXZQMC.DataPropertyName = "行政区名称";
-            this.clXZQMC.HeaderText = "行政区名称";
-            this.clXZQMC.Name = "clXZQMC";
-            this.clXZQMC.ReadOnly = true;
-            // 
-            // clFJBM
-            // 
-            this.clFJBM.DataPropertyName = "父级编码";
-            this.clFJBM.HeaderText = "父级编码";
-            this.clFJBM.Name = "clFJBM";
-            this.clFJBM.ReadOnly = true;
-            this.clFJBM.Width = 200;
             // 
             // quHuaBindingSource
             // 
@@ -150,33 +110,37 @@ namespace DataQuality
             // 
             this.quHuaTableAdapter.ClearBeforeFill = true;
             // 
-            // iDDataGridViewTextBoxColumn
+            // clXH
             // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.clXH.DataPropertyName = "ID";
+            this.clXH.HeaderText = "序号";
+            this.clXH.Name = "clXH";
+            this.clXH.ReadOnly = true;
+            this.clXH.Width = 60;
             // 
-            // 行政区编码DataGridViewTextBoxColumn
+            // clXZQBM
             // 
-            this.行政区编码DataGridViewTextBoxColumn.DataPropertyName = "行政区编码";
-            this.行政区编码DataGridViewTextBoxColumn.HeaderText = "行政区编码";
-            this.行政区编码DataGridViewTextBoxColumn.Name = "行政区编码DataGridViewTextBoxColumn";
-            this.行政区编码DataGridViewTextBoxColumn.ReadOnly = true;
+            this.clXZQBM.DataPropertyName = "行政区编码";
+            this.clXZQBM.HeaderText = "行政区编码";
+            this.clXZQBM.Name = "clXZQBM";
+            this.clXZQBM.ReadOnly = true;
+            this.clXZQBM.Width = 200;
             // 
-            // 行政区名称DataGridViewTextBoxColumn
+            // clXZQMC
             // 
-            this.行政区名称DataGridViewTextBoxColumn.DataPropertyName = "行政区名称";
-            this.行政区名称DataGridViewTextBoxColumn.HeaderText = "行政区名称";
-            this.行政区名称DataGridViewTextBoxColumn.Name = "行政区名称DataGridViewTextBoxColumn";
-            this.行政区名称DataGridViewTextBoxColumn.ReadOnly = true;
+            this.clXZQMC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clXZQMC.DataPropertyName = "行政区名称";
+            this.clXZQMC.HeaderText = "行政区名称";
+            this.clXZQMC.Name = "clXZQMC";
+            this.clXZQMC.ReadOnly = true;
             // 
-            // 父级编码DataGridViewTextBoxColumn
+            // clFJBM
             // 
-            this.父级编码DataGridViewTextBoxColumn.DataPropertyName = "父级编码";
-            this.父级编码DataGridViewTextBoxColumn.HeaderText = "父级编码";
-            this.父级编码DataGridViewTextBoxColumn.Name = "父级编码DataGridViewTextBoxColumn";
-            this.父级编码DataGridViewTextBoxColumn.ReadOnly = true;
+            this.clFJBM.DataPropertyName = "父级编码";
+            this.clFJBM.HeaderText = "父级编码";
+            this.clFJBM.Name = "clFJBM";
+            this.clFJBM.ReadOnly = true;
+            this.clFJBM.Width = 200;
             // 
             // XZQHBMCrl
             // 
@@ -209,9 +173,5 @@ namespace DataQuality
         private System.Windows.Forms.DataGridViewTextBoxColumn clXZQBM;
         private System.Windows.Forms.DataGridViewTextBoxColumn clXZQMC;
         private System.Windows.Forms.DataGridViewTextBoxColumn clFJBM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 行政区编码DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 行政区名称DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 父级编码DataGridViewTextBoxColumn;
     }
 }

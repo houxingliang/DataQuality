@@ -97,8 +97,36 @@ namespace DataQuality
             {
                 CheckPath checkPath = new CheckPath();
                 checkPath.CheckPathMsg(tbBrowse.Text, this);
-   
             }
+            //成果文件配置
+            if(cbJGFHX.Checked)
+            {
+                CheckFile checkFile = new CheckFile();
+                checkFile.ReturnFiles(tbBrowse.Text, this);
+            }
+            if(cbJCZB.Checked)
+            {
+                CheckFile checkFile = new CheckFile();
+                CheckZhiBiao zhibiao = new CheckZhiBiao();
+                zhibiao.CheckZhiBiaoMsg(checkFile.ReturnFiles(tbBrowse.Text,this),tbBrowse.Text);
+            }
+            /********************此区域预留用于检查其它项目，代码参考CheckPathMsg**************************/
+            
+
+
+            /********************************************************************************************/
+            //将错误信息写入首页的DataGridView
+            WriteFile writeFile = new WriteFile();
+            writeFile.WriteDataGridView(ComMsg.ResultShow, this.dgCheckResult);
+
+            //生成文档
+            CreateFile createFile = new CreateFile();
+            createFile.CreateDoc(tbBrowse.Text,cmbType.Text);//创建word文档
+            createFile.CreateXls(tbBrowse.Text,cmbType.Text);//创建Excel文档
+
+            //写入文档
+            writeFile.WriteXls(ComMsg.xlsPath);//向Excel文档中写入检查结果
+
         }
 
 

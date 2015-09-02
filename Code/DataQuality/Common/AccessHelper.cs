@@ -40,7 +40,7 @@ public class AccessHelper
     /// <param name="Dbpath">ACCESS数据库路径-webconfig中自定义</param>
     public AccessHelper(string DBpath)
     {
-        ConnString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Application.StartupPath + @"\Setting.accdb";
+        ConnString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + DBpath;
         Conn = new OleDbConnection(ConnString);
         Conn.Open();
     }    
@@ -83,6 +83,19 @@ public class AccessHelper
         return Dt;
     }
 
+    public DataTable SelectToDataTable(string SQL,string PATH)
+    {
+        ConnString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + PATH;
+        Conn = new OleDbConnection(ConnString);
+        Conn.Open();
+        OleDbDataAdapter adapter = new OleDbDataAdapter();
+        OleDbCommand command = new OleDbCommand(SQL, Conn);
+        adapter.SelectCommand = command;
+        DataTable Dt = new DataTable();
+        adapter.Fill(Dt);
+        Conn.Close();
+        return Dt;
+    }
     /// <summary>
     /// 根据SQL命令返回数据DataSet数据集，其中的表可直接作为dataGridView的数据源。
     /// </summary>
@@ -192,6 +205,72 @@ public class AccessHelper
         }
     }
 
+    /// <summary>
+    /// 返回Mdb数据库中所有表表名
+    /// </summary>
+    public string[] GetShemaTableName(string database_path, string database_password)
+    {
+        try
+        {
+            //获取数据表
+            Conn = new OleDbConnection();
+            Conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + database_path;
+            Conn.Open();
+            DataTable shemaTable = Conn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });
+            int n = shemaTable.Rows.Count;
+            string[] strTable = new string[n];
+            int m = shemaTable.Columns.IndexOf("TABLE_NAME");
+            for (int i = 0; i < n; i++)
+            {
+                DataRow m_DataRow = shemaTable.Rows[i];
+                strTable[i] = m_DataRow.ItemArray.GetValue(m).ToString();
+            }
+            return strTable;
+        }
+        catch (OleDbException ex)
+        {
+            MessageBox.Show("指定的限制集无效:/n" + ex.Message);
+            return null;
+        }
+        finally
+        {
+            Conn.Close();
+            Conn.Dispose();
+        }
+    }
+
+    /// <summary>
+    /// 返回某一表的所有字段名
+    /// </summary>
+    public string[] GetTableColumn(string database_path, string varTableName)
+    {
+        DataTable dt = new DataTable();
+        try
+        {
+            Conn = new OleDbConnection();
+            Conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + database_path;
+            Conn.Open();
+            dt = Conn.GetOleDbSchemaTable(OleDbSchemaGuid.Columns, new object[] { null, null, varTableName, null });
+            int n = dt.Rows.Count;
+            string[] strTable = new string[n];
+            int m = dt.Columns.IndexOf("COLUMN_NAME");
+            for (int i = 0; i < n; i++)
+            {
+                DataRow m_DataRow = dt.Rows[i];
+                strTable[i] = m_DataRow.ItemArray.GetValue(m).ToString();
+                
+            }
+            return strTable;
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        finally
+        {
+            Conn.Close();
+        }
+    }
 
     
 }

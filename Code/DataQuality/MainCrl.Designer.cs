@@ -54,13 +54,25 @@
             this.tpRZ = new System.Windows.Forms.TabPage();
             this.rtbLog = new System.Windows.Forms.RichTextBox();
             this.btnCheck = new System.Windows.Forms.Button();
+            this.dgCheckResult = new System.Windows.Forms.DataGridView();
+            this.cmXH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmCGMC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmGZLX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmGZBH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmGZMC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmCWMS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmHH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmCWDJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmJCRQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tpCGMLJG.SuspendLayout();
+            this.tpJCJG.SuspendLayout();
             this.tpRZ.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCheckResult)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -273,10 +285,11 @@
             // 
             // tpJCJG
             // 
+            this.tpJCJG.Controls.Add(this.dgCheckResult);
             this.tpJCJG.Location = new System.Drawing.Point(4, 22);
             this.tpJCJG.Name = "tpJCJG";
             this.tpJCJG.Padding = new System.Windows.Forms.Padding(3);
-            this.tpJCJG.Size = new System.Drawing.Size(971, 374);
+            this.tpJCJG.Size = new System.Drawing.Size(958, 444);
             this.tpJCJG.TabIndex = 1;
             this.tpJCJG.Text = "检查结果";
             this.tpJCJG.UseVisualStyleBackColor = true;
@@ -285,7 +298,7 @@
             // 
             this.tpTXYL.Location = new System.Drawing.Point(4, 22);
             this.tpTXYL.Name = "tpTXYL";
-            this.tpTXYL.Size = new System.Drawing.Size(971, 374);
+            this.tpTXYL.Size = new System.Drawing.Size(958, 444);
             this.tpTXYL.TabIndex = 2;
             this.tpTXYL.Text = "图形预览";
             this.tpTXYL.UseVisualStyleBackColor = true;
@@ -322,6 +335,86 @@
             this.btnCheck.UseVisualStyleBackColor = true;
             this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
+            // dgCheckResult
+            // 
+            this.dgCheckResult.AllowUserToAddRows = false;
+            this.dgCheckResult.AllowUserToDeleteRows = false;
+            this.dgCheckResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCheckResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cmXH,
+            this.cmCGMC,
+            this.cmGZLX,
+            this.cmGZBH,
+            this.cmGZMC,
+            this.cmCWMS,
+            this.cmHH,
+            this.cmCWDJ,
+            this.cmJCRQ});
+            this.dgCheckResult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgCheckResult.Location = new System.Drawing.Point(3, 3);
+            this.dgCheckResult.Name = "dgCheckResult";
+            this.dgCheckResult.ReadOnly = true;
+            this.dgCheckResult.RowTemplate.Height = 23;
+            this.dgCheckResult.Size = new System.Drawing.Size(952, 438);
+            this.dgCheckResult.TabIndex = 0;
+            // 
+            // cmXH
+            // 
+            this.cmXH.HeaderText = "序号";
+            this.cmXH.Name = "cmXH";
+            this.cmXH.ReadOnly = true;
+            this.cmXH.Width = 60;
+            // 
+            // cmCGMC
+            // 
+            this.cmCGMC.HeaderText = "成果名称";
+            this.cmCGMC.Name = "cmCGMC";
+            this.cmCGMC.ReadOnly = true;
+            // 
+            // cmGZLX
+            // 
+            this.cmGZLX.HeaderText = "规则类型";
+            this.cmGZLX.Name = "cmGZLX";
+            this.cmGZLX.ReadOnly = true;
+            // 
+            // cmGZBH
+            // 
+            this.cmGZBH.HeaderText = "规则编号";
+            this.cmGZBH.Name = "cmGZBH";
+            this.cmGZBH.ReadOnly = true;
+            // 
+            // cmGZMC
+            // 
+            this.cmGZMC.HeaderText = "规则名称";
+            this.cmGZMC.Name = "cmGZMC";
+            this.cmGZMC.ReadOnly = true;
+            // 
+            // cmCWMS
+            // 
+            this.cmCWMS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cmCWMS.HeaderText = "错误描述";
+            this.cmCWMS.Name = "cmCWMS";
+            this.cmCWMS.ReadOnly = true;
+            // 
+            // cmHH
+            // 
+            this.cmHH.HeaderText = "行号";
+            this.cmHH.Name = "cmHH";
+            this.cmHH.ReadOnly = true;
+            this.cmHH.Width = 60;
+            // 
+            // cmCWDJ
+            // 
+            this.cmCWDJ.HeaderText = "错误等级";
+            this.cmCWDJ.Name = "cmCWDJ";
+            this.cmCWDJ.ReadOnly = true;
+            // 
+            // cmJCRQ
+            // 
+            this.cmJCRQ.HeaderText = "检查日期";
+            this.cmJCRQ.Name = "cmJCRQ";
+            this.cmJCRQ.ReadOnly = true;
+            // 
             // MainCrl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -344,7 +437,9 @@
             this.groupBox4.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tpCGMLJG.ResumeLayout(false);
+            this.tpJCJG.ResumeLayout(false);
             this.tpRZ.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgCheckResult)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -375,5 +470,15 @@
         private System.Windows.Forms.ImageList imageList1;
         public System.Windows.Forms.RichTextBox rtbLog;
         private System.Windows.Forms.Button btnCheck;
+        private System.Windows.Forms.DataGridView dgCheckResult;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cmXH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cmCGMC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cmGZLX;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cmGZBH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cmGZMC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cmCWMS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cmHH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cmCWDJ;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cmJCRQ;
     }
 }
