@@ -11,6 +11,7 @@ using System.Web;
 using System.IO;
 using System.Web.UI.WebControls;
 using DataQuality.Common;
+using System.Threading;
 
 namespace DataQuality
 {
@@ -92,6 +93,7 @@ namespace DataQuality
         /// <param name="e"></param>
         private void btnCheck_Click(object sender, EventArgs e)
         {
+
             //检查文件路径
             if (cbJGFHX.Checked)
             {
@@ -102,13 +104,15 @@ namespace DataQuality
             if(cbJGFHX.Checked)
             {
                 CheckFile checkFile = new CheckFile();
-                checkFile.ReturnFiles(tbBrowse.Text, this);
+                checkFile.CheckFileMsg(checkFile.ReturnFiles(tbBrowse.Text, this), tbBrowse.Text,this);
             }
             if(cbJCZB.Checked)
             {
                 CheckFile checkFile = new CheckFile();
                 CheckZhiBiao zhibiao = new CheckZhiBiao();
-                zhibiao.CheckZhiBiaoMsg(checkFile.ReturnFiles(tbBrowse.Text,this),tbBrowse.Text);
+                //zhibiao.CheckZhiBiaoMsg(checkFile.ReturnFiles(tbBrowse.Text,this),tbBrowse.Text);
+                Thread thread = new Thread(delegate() { zhibiao.CheckZhiBiaoMsg(checkFile.ReturnFiles(tbBrowse.Text, this), tbBrowse.Text,this); });
+                thread.Start();  
             }
             /********************此区域预留用于检查其它项目，代码参考CheckPathMsg**************************/
             
@@ -121,14 +125,12 @@ namespace DataQuality
 
             //生成文档
             CreateFile createFile = new CreateFile();
-            createFile.CreateDoc(tbBrowse.Text,cmbType.Text);//创建word文档
-            createFile.CreateXls(tbBrowse.Text,cmbType.Text);//创建Excel文档
+            createFile.CreateDoc(tbBrowse.Text, cmbType.Text);//创建word文档
+            createFile.CreateXls(tbBrowse.Text, cmbType.Text);//创建Excel文档
 
             //写入文档
             writeFile.WriteXls(ComMsg.xlsPath);//向Excel文档中写入检查结果
 
         }
-
-
     }
 }

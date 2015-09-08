@@ -99,3 +99,5 @@ F:\GitHub\DataQuality\Code\DataQuality\obj\x86\Debug\DataQuality.ZBBZDPZCrl.reso
 F:\GitHub\DataQuality\Code\DataQuality\obj\x86\Debug\DataQuality.ZDCrl.resources
 F:\GitHub\DataQuality\Code\DataQuality\obj\x86\Debug\DataQuality.ZDFrm.resources
 F:\GitHub\DataQuality\Code\DataQuality\obj\x86\Debug\DataQuality.csproj.GenerateResource.Cache
+F:\GitHub\DataQuality\Code\DataQuality\obj\x86\Debug\DataQuality.LoginFrm.resources
+F:\GitHub\DataQuality\Code\DataQuality\obj\x86\Debug\DataQuality.EditPasswordFrm.resources

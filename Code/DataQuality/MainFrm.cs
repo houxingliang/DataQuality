@@ -127,6 +127,15 @@ namespace DataQuality
             cgwjpzCrl1.Visible = false;
             xzqhbmCrl1.Visible = true;
         }
+        /// <summary>
+        /// 退出程序
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainFrm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
 
     }
 }

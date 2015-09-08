@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.tsmCGJC = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCD = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmZBBZDPZ = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmZDPZ = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmGZPZ = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmCGMLPZ = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmCGWJPZ = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmXZQHBM = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCGJC = new System.Windows.Forms.ToolStripMenuItem();
             this.xzqhbmCrl1 = new DataQuality.XZQHBMCrl();
             this.cgwjpzCrl1 = new DataQuality.CGWJPZCrl();
             this.cgmlpzCrl1 = new DataQuality.CGMLPZCrl();
@@ -49,6 +51,16 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmCD});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1008, 25);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // tsmCD
+            // 
+            this.tsmCD.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmCGJC,
             this.tsmZBBZDPZ,
             this.tsmZDPZ,
@@ -56,60 +68,66 @@
             this.tsmCGMLPZ,
             this.tsmCGWJPZ,
             this.tsmXZQHBM});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1008, 25);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // tsmCGJC
-            // 
-            this.tsmCGJC.Name = "tsmCGJC";
-            this.tsmCGJC.Size = new System.Drawing.Size(68, 21);
-            this.tsmCGJC.Text = "成果检查";
-            this.tsmCGJC.Click += new System.EventHandler(this.tsmCGJC_Click);
+            this.tsmCD.Image = ((System.Drawing.Image)(resources.GetObject("tsmCD.Image")));
+            this.tsmCD.Name = "tsmCD";
+            this.tsmCD.Size = new System.Drawing.Size(60, 21);
+            this.tsmCD.Text = "菜单";
             // 
             // tsmZBBZDPZ
             // 
+            this.tsmZBBZDPZ.Image = ((System.Drawing.Image)(resources.GetObject("tsmZBBZDPZ.Image")));
             this.tsmZBBZDPZ.Name = "tsmZBBZDPZ";
-            this.tsmZBBZDPZ.Size = new System.Drawing.Size(104, 21);
+            this.tsmZBBZDPZ.Size = new System.Drawing.Size(160, 22);
             this.tsmZBBZDPZ.Text = "指标表字段配置";
             this.tsmZBBZDPZ.Click += new System.EventHandler(this.tsmZBBZDPZ_Click);
             // 
             // tsmZDPZ
             // 
+            this.tsmZDPZ.Image = ((System.Drawing.Image)(resources.GetObject("tsmZDPZ.Image")));
             this.tsmZDPZ.Name = "tsmZDPZ";
-            this.tsmZDPZ.Size = new System.Drawing.Size(68, 21);
+            this.tsmZDPZ.Size = new System.Drawing.Size(160, 22);
             this.tsmZDPZ.Text = "字典配置";
             this.tsmZDPZ.Click += new System.EventHandler(this.tsmZDPZ_Click);
             // 
             // tsmGZPZ
             // 
+            this.tsmGZPZ.Image = ((System.Drawing.Image)(resources.GetObject("tsmGZPZ.Image")));
             this.tsmGZPZ.Name = "tsmGZPZ";
-            this.tsmGZPZ.Size = new System.Drawing.Size(68, 21);
+            this.tsmGZPZ.Size = new System.Drawing.Size(160, 22);
             this.tsmGZPZ.Text = "规则配置";
             this.tsmGZPZ.Click += new System.EventHandler(this.tsmGZPZ_Click);
             // 
             // tsmCGMLPZ
             // 
+            this.tsmCGMLPZ.Image = ((System.Drawing.Image)(resources.GetObject("tsmCGMLPZ.Image")));
             this.tsmCGMLPZ.Name = "tsmCGMLPZ";
-            this.tsmCGMLPZ.Size = new System.Drawing.Size(92, 21);
+            this.tsmCGMLPZ.Size = new System.Drawing.Size(160, 22);
             this.tsmCGMLPZ.Text = "成果目录配置";
             this.tsmCGMLPZ.Click += new System.EventHandler(this.tsmCGMLPZ_Click);
             // 
             // tsmCGWJPZ
             // 
+            this.tsmCGWJPZ.Image = ((System.Drawing.Image)(resources.GetObject("tsmCGWJPZ.Image")));
             this.tsmCGWJPZ.Name = "tsmCGWJPZ";
-            this.tsmCGWJPZ.Size = new System.Drawing.Size(92, 21);
+            this.tsmCGWJPZ.Size = new System.Drawing.Size(160, 22);
             this.tsmCGWJPZ.Text = "成果文件配置";
             this.tsmCGWJPZ.Click += new System.EventHandler(this.tsmCGWJPZ_Click);
             // 
             // tsmXZQHBM
             // 
+            this.tsmXZQHBM.Image = ((System.Drawing.Image)(resources.GetObject("tsmXZQHBM.Image")));
             this.tsmXZQHBM.Name = "tsmXZQHBM";
-            this.tsmXZQHBM.Size = new System.Drawing.Size(92, 21);
+            this.tsmXZQHBM.Size = new System.Drawing.Size(160, 22);
             this.tsmXZQHBM.Text = "行政区划编码";
             this.tsmXZQHBM.Click += new System.EventHandler(this.tsmXZQHBM_Click);
+            // 
+            // tsmCGJC
+            // 
+            this.tsmCGJC.Image = ((System.Drawing.Image)(resources.GetObject("tsmCGJC.Image")));
+            this.tsmCGJC.Name = "tsmCGJC";
+            this.tsmCGJC.Size = new System.Drawing.Size(160, 22);
+            this.tsmCGJC.Text = "成果检查";
+            this.tsmCGJC.Click += new System.EventHandler(this.tsmCGJC_Click);
             // 
             // xzqhbmCrl1
             // 
@@ -180,9 +198,11 @@
             this.Controls.Add(this.zbbzdpzCrl1);
             this.Controls.Add(this.mainCrl1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainFrm";
             this.Text = "存量数据质检软件";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainFrm_FormClosed);
             this.Load += new System.EventHandler(this.MainFrm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -194,13 +214,7 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem tsmCGJC;
-        private System.Windows.Forms.ToolStripMenuItem tsmZBBZDPZ;
-        private System.Windows.Forms.ToolStripMenuItem tsmZDPZ;
-        private System.Windows.Forms.ToolStripMenuItem tsmGZPZ;
-        private System.Windows.Forms.ToolStripMenuItem tsmCGMLPZ;
-        private System.Windows.Forms.ToolStripMenuItem tsmCGWJPZ;
-        private System.Windows.Forms.ToolStripMenuItem tsmXZQHBM;
+        private System.Windows.Forms.ToolStripMenuItem tsmCD;
         private MainCrl mainCrl1;
         private ZBBZDPZCrl zbbzdpzCrl1;
         private ZDCrl zdCrl1;
@@ -208,6 +222,13 @@
         private CGMLPZCrl cgmlpzCrl1;
         private CGWJPZCrl cgwjpzCrl1;
         private XZQHBMCrl xzqhbmCrl1;
+        private System.Windows.Forms.ToolStripMenuItem tsmZBBZDPZ;
+        private System.Windows.Forms.ToolStripMenuItem tsmZDPZ;
+        private System.Windows.Forms.ToolStripMenuItem tsmGZPZ;
+        private System.Windows.Forms.ToolStripMenuItem tsmCGMLPZ;
+        private System.Windows.Forms.ToolStripMenuItem tsmCGWJPZ;
+        private System.Windows.Forms.ToolStripMenuItem tsmXZQHBM;
+        private System.Windows.Forms.ToolStripMenuItem tsmCGJC;
     }
 }
 

@@ -15,3 +15,29 @@ C:\Users\HouXingliang\documents\visual studio 2013\Projects\DataQuality\DataQual
 C:\Users\HouXingliang\documents\visual studio 2013\Projects\DataQuality\DataQuality\bin\Debug\Setting.accdb
 C:\Users\HouXingliang\documents\visual studio 2013\Projects\DataQuality\DataQuality\bin\Debug\DataQuality.exe.config
 C:\Users\HouXingliang\documents\visual studio 2013\Projects\DataQuality\DataQuality\obj\Debug\DataQuality.csprojResolveAssemblyReference.cache
+F:\GitHub\DataQuality\Code\DataQuality\bin\Debug\DataQuality.exe.config
+F:\GitHub\DataQuality\Code\DataQuality\obj\Debug\DataQuality.exe
+F:\GitHub\DataQuality\Code\DataQuality\obj\Debug\DataQuality.pdb
+F:\GitHub\DataQuality\Code\DataQuality\bin\Debug\Setting.accdb
+F:\GitHub\DataQuality\Code\DataQuality\bin\Debug\DataQuality.exe
+F:\GitHub\DataQuality\Code\DataQuality\bin\Debug\DataQuality.pdb
+F:\GitHub\DataQuality\Code\DataQuality\bin\Debug\Microsoft.Office.Interop.Word.dll
+F:\GitHub\DataQuality\Code\DataQuality\bin\Debug\office.dll
+F:\GitHub\DataQuality\Code\DataQuality\bin\Debug\Microsoft.Vbe.Interop.dll
+F:\GitHub\DataQuality\Code\DataQuality\obj\Debug\DataQuality.csprojResolveAssemblyReference.cache
+F:\GitHub\DataQuality\Code\DataQuality\obj\Debug\DataQuality.CGMLPZCrl.resources
+F:\GitHub\DataQuality\Code\DataQuality\obj\Debug\DataQuality.CGMLPZFrm.resources
+F:\GitHub\DataQuality\Code\DataQuality\obj\Debug\DataQuality.CGWJPZCrl.resources
+F:\GitHub\DataQuality\Code\DataQuality\obj\Debug\DataQuality.CGWJPZFrm.resources
+F:\GitHub\DataQuality\Code\DataQuality\obj\Debug\DataQuality.GZPZCrl.resources
+F:\GitHub\DataQuality\Code\DataQuality\obj\Debug\DataQuality.GZPZFrm.resources
+F:\GitHub\DataQuality\Code\DataQuality\obj\Debug\DataQuality.MainCrl.resources
+F:\GitHub\DataQuality\Code\DataQuality\obj\Debug\DataQuality.MainFrm.resources
+F:\GitHub\DataQuality\Code\DataQuality\obj\Debug\DataQuality.Properties.Resources.resources
+F:\GitHub\DataQuality\Code\DataQuality\obj\Debug\DataQuality.XZQHBMCrl.resources
+F:\GitHub\DataQuality\Code\DataQuality\obj\Debug\DataQuality.XZQHBMFrm.resources
+F:\GitHub\DataQuality\Code\DataQuality\obj\Debug\DataQuality.ZBBPZFrm.resources
+F:\GitHub\DataQuality\Code\DataQuality\obj\Debug\DataQuality.ZBBZDPZCrl.resources
+F:\GitHub\DataQuality\Code\DataQuality\obj\Debug\DataQuality.ZDCrl.resources
+F:\GitHub\DataQuality\Code\DataQuality\obj\Debug\DataQuality.ZDFrm.resources
+F:\GitHub\DataQuality\Code\DataQuality\obj\Debug\DataQuality.csproj.GenerateResource.Cache

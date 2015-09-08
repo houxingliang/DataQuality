@@ -50,6 +50,8 @@ namespace DataQuality
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -62,6 +64,7 @@ namespace DataQuality
             this.dataGridView1.DataSource = this.wenJianBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(985, 550);
@@ -125,6 +128,7 @@ namespace DataQuality
             this.clGZLX.DataPropertyName = "文件开始字符";
             this.clGZLX.HeaderText = "文件开始字符";
             this.clGZLX.Name = "clGZLX";
+            this.clGZLX.ReadOnly = true;
             // 
             // clGZBH
             // 
@@ -132,24 +136,28 @@ namespace DataQuality
             this.clGZBH.DataPropertyName = "文件结束字符";
             this.clGZBH.HeaderText = "文件结束字符";
             this.clGZBH.Name = "clGZBH";
+            this.clGZBH.ReadOnly = true;
             // 
             // clLGZZBH
             // 
             this.clLGZZBH.DataPropertyName = "文件扩展名";
             this.clLGZZBH.HeaderText = "文件扩展名";
             this.clLGZZBH.Name = "clLGZZBH";
+            this.clLGZZBH.ReadOnly = true;
             // 
             // clGZMC
             // 
             this.clGZMC.DataPropertyName = "文件类型";
             this.clGZMC.HeaderText = "文件类型";
             this.clGZMC.Name = "clGZMC";
+            this.clGZMC.ReadOnly = true;
             // 
             // clCWMS
             // 
             this.clCWMS.DataPropertyName = "是否必填";
             this.clCWMS.HeaderText = "是否必填";
             this.clCWMS.Name = "clCWMS";
+            this.clCWMS.ReadOnly = true;
             this.clCWMS.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.clCWMS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 

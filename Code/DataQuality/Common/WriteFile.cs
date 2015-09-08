@@ -64,6 +64,7 @@ namespace DataQuality.Common
             Microsoft.Office.Interop.Excel.Application excelApp = null;//引用excel对象
             Microsoft.Office.Interop.Excel.Workbook workBook = null;//引用工作簿
             Microsoft.Office.Interop.Excel.Worksheet sheetMuLu = null;//引用工作表-目录完整性
+            Microsoft.Office.Interop.Excel.Worksheet sheetZhiBiao = null;//应用工作表-结构符合性
             try
             {
                 excelApp = new Microsoft.Office.Interop.Excel.Application();
@@ -88,14 +89,33 @@ namespace DataQuality.Common
                     sheetMuLu.Cells[8][i + 2] = muluList[i].Cwdj;
                     sheetMuLu.Cells[9][i + 2] = muluList[i].Jcrq;
                 }
-                /***************************此处预留其它检查类型******************************************/
+                //结构符合性
+                sheetZhiBiao = (Worksheet)workBook.Worksheets[2];
+                var zhibiao = from p in ComMsg.ResultShow
+                              where p.Gzlx.Equals("结构符合性")
+                              select p;
+                List<ResultEntity> zhibiaoList = zhibiao.ToList();
+                for (int i = 0; i < muluList.Count;i++ )
+                {
+                    sheetZhiBiao.Cells[1][i + 2] = (i + 1).ToString();//第一列，第(i+2)行
+                    sheetZhiBiao.Cells[2][i + 2] = zhibiaoList[i].Cgmc;
+                    sheetZhiBiao.Cells[3][i + 2] = zhibiaoList[i].Gzlx;
+                    sheetZhiBiao.Cells[4][i + 2] = zhibiaoList[i].Gzbh;
+                    sheetZhiBiao.Cells[5][i + 2] = zhibiaoList[i].Gzmc;
+                    sheetZhiBiao.Cells[6][i + 2] = zhibiaoList[i].Cwms;
+                    sheetZhiBiao.Cells[7][i + 2] = zhibiaoList[i].Hh;
+                    sheetZhiBiao.Cells[8][i + 2] = zhibiaoList[i].Cwdj;
+                    sheetZhiBiao.Cells[9][i + 2] = zhibiaoList[i].Jcrq;
+                }
+                    /***************************此处预留其它检查类型******************************************/
 
 
 
-                /*********************************************************************/
+                    /*********************************************************************/
 
-                //保存写入的数据
-                sheetMuLu.SaveAs(ComMsg.xlsPath, Missing.Value, Missing.Value, Missing.Value, Missing.Value, Missing.Value, Missing.Value, Missing.Value, Missing.Value, Missing.Value);
+                    //保存写入的数据
+                workBook.SaveAs(ComMsg.xlsPath, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+                workBook.Close(false, Type.Missing, Type.Missing);
                 excelApp.Quit();
             }
             catch (Exception e)

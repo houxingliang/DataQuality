@@ -60,7 +60,7 @@ namespace DataQuality.Common
         /// 检查文件信息
         /// </summary>
         /// <param name="infoList"></param>
-        public void CheckFileMsg(List<FileInfo> infoList,string path)
+        public void CheckFileMsg(List<FileInfo> infoList,string path,MainCrl crl)
         {
             
             List<string> files = new List<string>();//去除所有父级目录后的文件信息
@@ -77,19 +77,148 @@ namespace DataQuality.Common
             //检查当前文件是否在数据库配置中
             AccessHelper ah = new AccessHelper();
             System.Data.DataTable dt = ah.SelectToDataTable("select * from WenJian");
+            List<string> dateList = new List<string>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                for (int j = 0; j < files.Count; j++)
+                if(((bool)dt.Rows[i]["是否必填"]))
                 {
-                    //检查文件开始字符
-                    if (dt.Rows[i]["文件开始字符"].ToString().Equals(files[j].Substring(0, files[j].LastIndexOf(@"\"))))
+                    bool showError = true;//是否显示问题数据
+                    for (int j = 0; j < files.Count; j++)
                     {
-                        //检查文件结束字符
-                        System.Data.DataTable dtEnd = ah.SelectToDataTable("select * from WenJian where  文件开始字符='" + dt.Rows[i]["文件开始字符'"]);
-
+                        if(dt.Rows[i]["文件开始字符"].ToString().Contains("|"))
+                        {
+                            string[] actionList = dt.Rows[i]["文件开始字符"].ToString().Split("|".ToArray());
+                            if (actionList.Contains(files[j].Substring(0,files[j].LastIndexOf(@"\"))))
+                            {
+                                if (dt.Rows[i]["文件结束字符"].ToString().Contains("|"))//有“|”说明有多种选择，将字符按|进行分割比较
+                                {
+                                    string[] fileNameList = dt.Rows[i]["文件结束字符"].ToString().Split("|".ToArray());
+                                    foreach(string temp in fileNameList)
+                                    {
+                                        if(files[j].Contains(temp))
+                                        {
+                                            //在此判断后缀
+                                            if (dt.Rows[i]["文件扩展名"].ToString().Contains("|"))
+                                            {
+                                                string[] fileEndList = dt.Rows[i]["文件扩展名"].ToString().Split("|".ToArray());
+                                                foreach(string endTemp in fileEndList)
+                                                {
+                                                    if (endTemp.Contains(files[j].Substring(files[j].LastIndexOf(".") + 1)))
+                                                    {
+                                                        files.Remove(files[j]);
+                                                        showError = false;
+                                                        break;
+                                                    }
+                                                }
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                if(dt.Rows[i]["文件扩展名"].ToString().Contains(files[j].Substring(files[j].LastIndexOf(".") + 1)))
+                                                {
+                                                    files.Remove(files[j]);
+                                                    showError = false;
+                                                    break;
+                                                }
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                                else if (files[j].Contains(dt.Rows[i]["文件结束字符"].ToString()))
+                                {
+                                    if (dt.Rows[i]["文件扩展名"].ToString().Contains("|"))
+                                    {
+                                        string[] fileEndList = dt.Rows[i]["文件扩展名"].ToString().Split("|".ToArray());
+                                        foreach (string endTemp in fileEndList)
+                                        {
+                                            if (endTemp.Contains(files[j].Substring(files[j].LastIndexOf(".") + 1)))
+                                            {
+                                                files.Remove(files[j]);
+                                                showError = false;
+                                                break;
+                                            }
+                                            break;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (dt.Rows[i]["文件扩展名"].ToString().Contains(files[j].Substring(files[j].LastIndexOf(".") + 1)))
+                                        {
+                                            files.Remove(files[j]);
+                                            showError = false;
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        else if (files[j].Contains(dt.Rows[i]["文件开始字符"].ToString()))
+                        {
+                            if (dt.Rows[i]["文件结束字符"].ToString().Contains("|"))//有“|”说明有多种选择，将字符按|进行分割比较
+                            {
+                                string[] fileNameList = dt.Rows[i]["文件结束字符"].ToString().Split("|".ToArray());
+                                if (fileNameList.Contains(files[j]))
+                                {
+                                    if (dt.Rows[i]["文件扩展名"].ToString().Contains("|"))
+                                    {
+                                        string[] fileEndList = dt.Rows[i]["文件扩展名"].ToString().Split("|".ToArray());
+                                        foreach (string endTemp in fileEndList)
+                                        {
+                                            if (files[j].Contains(endTemp))
+                                            {
+                                                files.Remove(files[j]);
+                                                showError = false;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (dt.Rows[i]["文件扩展名"].ToString().Contains(files[j].Substring(files[j].LastIndexOf(".") + 1)))
+                                        {
+                                            files.Remove(files[j]);
+                                            showError = false;
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                            else if (files[j].Contains(dt.Rows[i]["文件结束字符"].ToString()))
+                            {
+                                if (dt.Rows[i]["文件扩展名"].ToString().Contains("|"))
+                                {
+                                    string[] fileEndList = dt.Rows[i]["文件扩展名"].ToString().Split("|".ToArray());
+                                    foreach (string endTemp in fileEndList)
+                                    {
+                                        if (files[j].Contains(endTemp))
+                                        {
+                                            files.Remove(files[j]);
+                                            showError = false;
+                                            break;
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    if (dt.Rows[i]["文件扩展名"].ToString().Contains(files[j].Substring(files[j].LastIndexOf(".") + 1)))
+                                    {
+                                        files.Remove(files[j]);
+                                        showError = false;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
                     }
+                    if (showError)
+                    {
+                        ComMsg.ResultShow.Add(new ResultEntity(path.Substring(path.LastIndexOf(@"\") + 1), "数据完整性", "900000001", "成果完整性符合标准",
+                           "目录结构或者文件不符合标准;缺少文件：" + dt.Rows[i]["文件结束字符"].ToString(), "", "重缺陷", DateTime.Now.ToShortDateString()));
+                        crl.rtbLog.Text += "\n " + "目录结构或者文件不符合标准，缺少文件" + dt.Rows[i]["文件结束字符"].ToString();
+                    }
+                        
                 }
-                //检查文件扩展名
             }
         }
 
