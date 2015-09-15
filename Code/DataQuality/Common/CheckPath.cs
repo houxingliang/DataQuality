@@ -65,7 +65,7 @@ namespace DataQuality.Common
                             }
                             ComMsg.ResultShow.Add(new ResultEntity(path, "数据完整性", "900000001", "成果完整性符合标准",
                             "目录结构或者文件不符合标准;缺少文件：" + path + @"\" + temp, "", "重缺陷", DateTime.Now.ToShortDateString()));
-                            crl.rtbLog.Text += "\n " + "目录结构或者文件不符合标准，缺少文件" + path + @"\" + temp;
+                            crl.rtbLog.Text += "\n " + DateTime.Now.ToShortTimeString()+" 目录结构或者文件不符合标准，缺少文件" + path + @"\" + temp;
                         }
                     }
                     //检查当前目录存在的多余文件夹

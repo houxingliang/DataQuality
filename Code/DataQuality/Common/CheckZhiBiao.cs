@@ -17,8 +17,9 @@ namespace DataQuality.Common
         /// 检查基础指标信息
         /// </summary>
         /// <param name="infoList"></param>
-        public void CheckZhiBiaoMsg(List<FileInfo> infoList,string path,MainCrl crl)
+        public bool CheckZhiBiaoMsg(List<FileInfo> infoList,string path,MainCrl crl)
         {
+            crl.rtbLog.Text += "\n " + DateTime.Now.ToLongTimeString() + "开始检查基础指标";
             List<string> files = new List<string>();//去除所有父级目录后的文件信息
             string tName = path.Substring(path.IndexOf(@"\") + 1);//成果名称
             tName = tName.Substring(tName.LastIndexOf(@"\")+1);
@@ -74,7 +75,6 @@ namespace DataQuality.Common
                                 if (check.Length > (int)dt.Rows[i]["数据长度"])
                                 {
                                     ComMsg.ResultShow.Add(new ResultEntity(tName, "结构符合性", "100000004", "字段值长度不能超过数据库标准的字段长度", "字段值长度不能超过数据库标准的字段长度", j + "", "重缺陷", DateTime.Now.ToShortDateString()));
-                                    crl.rtbLog.Text += "\n " + "字段值长度不能超过数据库标准的字段长度" + dt.Rows[i]["列名"].ToString();
                                 }
                             }
                             if(dt.Rows[i]["是否必填"].ToString().Equals("M"))//是否必填
@@ -82,7 +82,6 @@ namespace DataQuality.Common
                                 if (tempDT.Rows[j][(dt.Rows[i]["列名"].ToString())].ToString().Length==0)
                                 {
                                     ComMsg.ResultShow.Add(new ResultEntity(tName, "结构符合性", "100000002", "指标信息不能缺少字段", "指标信息不能缺少字段", j + "", "重缺陷", DateTime.Now.ToShortDateString()));
-                                    crl.rtbLog.Text += "\n " + "指标信息不能缺少字段" + dt.Rows[i]["列名"].ToString();
                                 }
                             }
 
@@ -93,12 +92,12 @@ namespace DataQuality.Common
                                 {
                                     int temp = Convert.ToInt32(tempDT.Rows[j][(dt.Rows[i]["列名"].ToString())]);
                                 }
-                                catch (Exception e)
+                                catch (Exception)
                                 {
                                     if (tempDT.Rows[j][(dt.Rows[i]["列名"].ToString())].ToString().Length > 0)
                                     {
                                         ComMsg.ResultShow.Add(new ResultEntity(tName, "结构符合性", "100000003", "字段值符合标准数据库字段类型", "字段值不符合标准数据库字段类型", j + "", "重缺陷", DateTime.Now.ToShortDateString()));
-                                        crl.rtbLog.Text += "\n " + "字段值不符合标准数据库字段类型" + dt.Rows[i]["列名"].ToString();
+                                        
                                     }
                                 }
                             }
@@ -116,17 +115,15 @@ namespace DataQuality.Common
                                         {
                                             string a = dt.Rows[i]["列名"].ToString();
                                             ComMsg.ResultShow.Add(new ResultEntity(tName, "结构符合性", "100000005", "字段值小数位数不能超过数据库标准的小数位数", (dt.Rows[i]["列名"] + "字段值小数位数不能超过数据库标准的小数位数"), (j + 1) + "", "重缺陷", DateTime.Now.ToShortDateString()));
-                                            crl.rtbLog.Text += "\n " + "字段值小数位数不能超过数据库标准的小数位数" + dt.Rows[i]["列名"].ToString();
                                         }
                                     }
                                 }
-                                catch (Exception e)
+                                catch (Exception)
                                 {
                                     if (tempDT.Rows[j][(dt.Rows[i]["列名"].ToString())].ToString().Length > 0)
                                     {
                                         ComMsg.ResultShow.Add(new ResultEntity(tName, "结构符合性", "100000003", "字段值符合标准数据库字段类型", "字段值不符合标准数据库字段类型", j + "", "重缺陷",   
                                 DateTime.Now.ToShortDateString()));
-                                        crl.rtbLog.Text += "\n " + "字段值不符合标准数据库字段类型" + dt.Rows[i]["列名"].ToString();
                                     }
                                 }
                             }
@@ -139,6 +136,8 @@ namespace DataQuality.Common
                     }
                 }
             }
+            ah.Close();
+            return true;
         }
     }
 }

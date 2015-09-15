@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -51,5 +52,14 @@ namespace DataQuality.Common
         /// doc文件路径
         /// </summary>
         public static string docPath = string.Empty;
+
+        /// <summary>
+        /// 选定目录下的所有文件信息
+        /// </summary>
+        public static List<FileInfo> infoList = new List<FileInfo>();
+        /// <summary>
+        /// 字典
+        /// </summary>
+        public static Dictionary<string, string> ziDian = new Dictionary<string, string>();
     }
 }

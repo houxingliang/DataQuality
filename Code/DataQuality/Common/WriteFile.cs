@@ -40,7 +40,7 @@ namespace DataQuality.Common
                     dgv.Rows[i].Cells["cmJCRQ"].Value = re.Jcrq;
                 }
             }
-            return false;
+            return true;
         }
         /// <summary>
         /// 向word文档写入检查出的错误数据
@@ -65,6 +65,7 @@ namespace DataQuality.Common
             Microsoft.Office.Interop.Excel.Workbook workBook = null;//引用工作簿
             Microsoft.Office.Interop.Excel.Worksheet sheetMuLu = null;//引用工作表-目录完整性
             Microsoft.Office.Interop.Excel.Worksheet sheetZhiBiao = null;//应用工作表-结构符合性
+            Microsoft.Office.Interop.Excel.Worksheet sheetJiChu = null;//引用工作表-基础指标
             try
             {
                 excelApp = new Microsoft.Office.Interop.Excel.Application();
@@ -95,7 +96,7 @@ namespace DataQuality.Common
                               where p.Gzlx.Equals("结构符合性")
                               select p;
                 List<ResultEntity> zhibiaoList = zhibiao.ToList();
-                for (int i = 0; i < muluList.Count;i++ )
+                for (int i = 0; i < zhibiaoList.Count;i++ )
                 {
                     sheetZhiBiao.Cells[1][i + 2] = (i + 1).ToString();//第一列，第(i+2)行
                     sheetZhiBiao.Cells[2][i + 2] = zhibiaoList[i].Cgmc;
@@ -107,11 +108,72 @@ namespace DataQuality.Common
                     sheetZhiBiao.Cells[8][i + 2] = zhibiaoList[i].Cwdj;
                     sheetZhiBiao.Cells[9][i + 2] = zhibiaoList[i].Jcrq;
                 }
+
+                //基础指标
+                sheetJiChu = (Worksheet)workBook.Worksheets[3];
+                var jichu = from p in ComMsg.ResultShow
+                              where p.Gzlx.Equals("基础指标")
+                              select p;
+                List<ResultEntity> jichuList = jichu.ToList();
+                for (int i = 0; i < jichuList.Count; i++)
+                {
+                    sheetJiChu.Cells[1][i + 2] = (i + 1).ToString();//第一列，第(i+2)行
+                    sheetJiChu.Cells[2][i + 2] = jichuList[i].Cgmc;
+                    sheetJiChu.Cells[3][i + 2] = jichuList[i].Gzlx;
+                    sheetJiChu.Cells[4][i + 2] = jichuList[i].Gzbh;
+                    sheetJiChu.Cells[5][i + 2] = jichuList[i].Gzmc;
+                    sheetJiChu.Cells[6][i + 2] = jichuList[i].Cwms;
+                    sheetJiChu.Cells[7][i + 2] = jichuList[i].Hh;
+                    sheetJiChu.Cells[8][i + 2] = jichuList[i].Cwdj;
+                    sheetJiChu.Cells[9][i + 2] = jichuList[i].Jcrq;
+                }
                     /***************************此处预留其它检查类型******************************************/
 
 
 
                     /*********************************************************************/
+
+                //汇总表格
+                Microsoft.Office.Interop.Excel.Worksheet shetHuiZong = null;
+                shetHuiZong = (Worksheet)workBook.Worksheets[6];
+                var huizong = from p in ComMsg.ResultShow
+                              select p;
+                List<ResultEntity> huizongList = huizong.ToList();
+                for (int i = 0; i < huizongList.Count; i++)
+                {
+                    shetHuiZong.Cells[1][i + 2] = (i + 1).ToString();//第一列，第(i+2)行
+                    shetHuiZong.Cells[2][i + 2] = huizongList[i].Cgmc;
+                    shetHuiZong.Cells[3][i + 2] = huizongList[i].Gzlx;
+                    shetHuiZong.Cells[4][i + 2] = huizongList[i].Gzbh;
+                    shetHuiZong.Cells[5][i + 2] = huizongList[i].Gzmc;
+                    shetHuiZong.Cells[6][i + 2] = huizongList[i].Cwms;
+                    shetHuiZong.Cells[7][i + 2] = huizongList[i].Hh;
+                    shetHuiZong.Cells[8][i + 2] = huizongList[i].Cwdj;
+                    shetHuiZong.Cells[9][i + 2] = huizongList[i].Jcrq;
+                }
+                //缺陷排行
+                Microsoft.Office.Interop.Excel.Worksheet sheetPaiHang = null;
+                sheetPaiHang = (Worksheet)workBook.Worksheets[7];
+                var paihang = (from p in ComMsg.ResultShow
+                              group p by p.Gzbh into g
+                              select new { 
+                                gzbh=g.Key,
+                                cwms=g,
+                                count=g.Count()
+                              } into c
+                              orderby c.count descending
+                              select c).ToList();
+               if(paihang.Count>0)
+               {
+                   for (int i = 0; i < paihang.Count; i++)
+                   {
+                       sheetPaiHang.Cells[1][i + 2] = (i + 1).ToString();//第一列，第(i+2)行
+                       sheetPaiHang.Cells[2][i + 2] = paihang[i].cwms.First().Cwdj;
+                       sheetPaiHang.Cells[3][i + 2] = paihang[i].gzbh;
+                       sheetPaiHang.Cells[4][i + 2] = paihang[i].cwms.First().Cwms;
+                       sheetPaiHang.Cells[5][i + 2] = paihang[i].count;
+                   }
+               }
 
                     //保存写入的数据
                 workBook.SaveAs(ComMsg.xlsPath, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);

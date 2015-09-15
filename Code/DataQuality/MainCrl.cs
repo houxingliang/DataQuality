@@ -110,17 +110,21 @@ namespace DataQuality
             {
                 CheckFile checkFile = new CheckFile();
                 CheckZhiBiao zhibiao = new CheckZhiBiao();
-                //zhibiao.CheckZhiBiaoMsg(checkFile.ReturnFiles(tbBrowse.Text,this),tbBrowse.Text);
-                Thread thread = new Thread(delegate() { zhibiao.CheckZhiBiaoMsg(checkFile.ReturnFiles(tbBrowse.Text, this), tbBrowse.Text,this); });
-                thread.Start();  
+                //zhibiao.CheckZhiBiaoMsg(ComMsg.infoList, tbBrowse.Text, this);
+                //Thread thread = new Thread(delegate() { zhibiao.CheckZhiBiaoMsg(ComMsg.infoList, tbBrowse.Text, this); });
+                //thread.Start();  
+            }
+            if(cbJCZB.Checked)
+            {
+                CheckGuiZe guize = new CheckGuiZe();
+                guize.CheckSempleGuiZe(tbBrowse.Text, this);
             }
             /********************此区域预留用于检查其它项目，代码参考CheckPathMsg**************************/
-            
-
 
             /********************************************************************************************/
             //将错误信息写入首页的DataGridView
             WriteFile writeFile = new WriteFile();
+            this.rtbLog.Text += "\n " + DateTime.Now.ToLongTimeString() + "写入列表文件";
             writeFile.WriteDataGridView(ComMsg.ResultShow, this.dgCheckResult);
 
             //生成文档
@@ -129,8 +133,18 @@ namespace DataQuality
             createFile.CreateXls(tbBrowse.Text, cmbType.Text);//创建Excel文档
 
             //写入文档
+            this.rtbLog.Text += "\n " + DateTime.Now.ToLongTimeString() + "写入Excel文件";
             writeFile.WriteXls(ComMsg.xlsPath);//向Excel文档中写入检查结果
+            this.rtbLog.Text += "\n " + DateTime.Now.ToLongTimeString() + "写入Word文件";
+            createFile.WrithDocFile(ComMsg.docPath);//向doc文档中写入检查结果
 
+
+            //清空相关的文档
+            ComMsg.docPath = string.Empty;
+            ComMsg.xlsPath = string.Empty;
+            ComMsg.infoList = new List<FileInfo>();
+            ComMsg.ResultShow = new List<ResultEntity>();
+            
         }
     }
 }

@@ -12,10 +12,6 @@ namespace DataQuality.Common
     /// </summary>
     class CheckFile
     {
-        /// <summary>
-        /// 选定目录下的所有文件信息
-        /// </summary>
-        List<FileInfo> infoList = new List<FileInfo>();
 
         /// <summary>
         /// 检查加载进来的文件夹下面的所有文件信息
@@ -27,6 +23,7 @@ namespace DataQuality.Common
             if(path.Length==0)
             {
                 MessageBox.Show("请选择路径");
+                return null;
             }
             System.IO.DirectoryInfo aDir = null;
             try
@@ -37,6 +34,7 @@ namespace DataQuality.Common
             catch (Exception)
             {
                 MessageBox.Show("路径不合法");
+                return null;
             }
             DirectoryInfo[] dirs = aDir.GetDirectories();//获取当前目录的所有子目录
             if(dirs.Count()>0)
@@ -48,12 +46,12 @@ namespace DataQuality.Common
                     AllFileName.Add(dir.FullName);//当前目录的子目录
                     if (dir.GetFiles().Count() != 0)
                     {
-                        infoList.AddRange(dir.GetFiles());
+                        ComMsg.infoList.AddRange(dir.GetFiles());
                     }
                     AllFile(AllFileName, dir);
                 }
             }
-            return infoList;
+            return  ComMsg.infoList;
         }
 
         /// <summary>
@@ -62,9 +60,10 @@ namespace DataQuality.Common
         /// <param name="infoList"></param>
         public void CheckFileMsg(List<FileInfo> infoList,string path,MainCrl crl)
         {
-            
+            crl.rtbLog.Text += "\n " + DateTime.Now.ToLongTimeString() + "开始检查文件目录及文件";
             List<string> files = new List<string>();//去除所有父级目录后的文件信息
             //读取了目标文件夹下所有的文件信息，将这些文件和数据库的信息进行成果比对
+            if (infoList == null) return;
             for (int i = 0; i < infoList.Count(); i++)
             {
                 //去除选定目录的所有父级目录，只保留选定文件夹所包含的文件夹路径
@@ -215,7 +214,7 @@ namespace DataQuality.Common
                     {
                         ComMsg.ResultShow.Add(new ResultEntity(path.Substring(path.LastIndexOf(@"\") + 1), "数据完整性", "900000001", "成果完整性符合标准",
                            "目录结构或者文件不符合标准;缺少文件：" + dt.Rows[i]["文件结束字符"].ToString(), "", "重缺陷", DateTime.Now.ToShortDateString()));
-                        crl.rtbLog.Text += "\n " + "目录结构或者文件不符合标准，缺少文件" + dt.Rows[i]["文件结束字符"].ToString();
+                        
                     }
                         
                 }
@@ -231,7 +230,7 @@ namespace DataQuality.Common
                 {
                      if(infos.GetFiles().Count()!=0)
                     {
-                        infoList.AddRange(infos.GetFiles());
+                        ComMsg.infoList.AddRange(infos.GetFiles());
                     }
                 }
                
@@ -245,7 +244,7 @@ namespace DataQuality.Common
                 //获取文件夹下的所有文件信息
                 if (info.GetFiles().Count() != 0)
                 {
-                    infoList.AddRange(info.GetFiles());
+                    ComMsg.infoList.AddRange(info.GetFiles());
                 }
                 AllFile(returnNum, info);
             }

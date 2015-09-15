@@ -58,6 +58,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -95,13 +96,18 @@
     </Compile>
     <Compile Include="Common\AccessHelper.cs" />
     <Compile Include="Common\CheckFile.cs" />
+    <Compile Include="Common\CheckGuiZe.cs" />
     <Compile Include="Common\CheckPath.cs" />
     <Compile Include="Common\CheckZhiBiao.cs" />
     <Compile Include="Common\ComMsg.cs" />
     <Compile Include="Common\CreateFile.cs" />
     <Compile Include="Common\QuHuaHelper.cs" />
-    <Compile Include="Common\ResultEntity.cs" />
+    <Compile Include="DLL\ZBXXBService.cs" />
+    <Compile Include="DLL\ZiDianService.cs" />
+    <Compile Include="Model\ResultEntity.cs" />
     <Compile Include="Common\WriteFile.cs" />
+    <Compile Include="Model\ZBXXBEntity.cs" />
+    <Compile Include="Model\ZiDianEntity.cs" />
     <Compile Include="EditPasswordFrm.cs">
       <SubType>Form</SubType>
     </Compile>
