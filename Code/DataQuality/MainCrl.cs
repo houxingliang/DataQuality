@@ -111,8 +111,8 @@ namespace DataQuality
                 CheckFile checkFile = new CheckFile();
                 CheckZhiBiao zhibiao = new CheckZhiBiao();
                 //zhibiao.CheckZhiBiaoMsg(ComMsg.infoList, tbBrowse.Text, this);
-                //Thread thread = new Thread(delegate() { zhibiao.CheckZhiBiaoMsg(ComMsg.infoList, tbBrowse.Text, this); });
-                //thread.Start();  
+                Thread thread = new Thread(delegate() { zhibiao.CheckZhiBiaoMsg(ComMsg.infoList, tbBrowse.Text, this); });
+                thread.Start();  
             }
             if(cbJCZB.Checked)
             {

@@ -70,14 +70,12 @@ namespace DataQuality.Common
                     //字段值大于等于某一值
                     ZDZDYDYMZ(sql, table, crl,tName);
                     //检查字段值是否在字典表中
-                    CheckZidian(sql, table, crl, tName);
+                    CheckZidianCode(sql, table, crl, tName);
+                    //检查字典名称是否在字典表中
+                    CheckZiDianName(sql, table, crl, tName);
 
-                    //字段值大于等于某一字段值
-                    //ZDZDYDYMYZDZ(sql, table, crl,tName);
-                    //字段值不能为空
-                    //ZDZBNWK(sql, table, crl, tName);
-                    //字段值必须为空
-                    //ZDZBXWK(sql, table, crl, tName);
+                    //逻辑检查
+                    CheckLuoJi(sql, table, crl, tName);
                 }
             }
             crl.rtbLog.Text += "\n " + DateTime.Now.ToLongTimeString() + "质检规则检查完毕";
@@ -129,8 +127,14 @@ namespace DataQuality.Common
                 }
             }
         }
-
-        public void CheckZidian(string sql,KeyValuePair<string,string> table,MainCrl crl,string tName)
+        /// <summary>
+        /// 检查数据是否在字典表中
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="table"></param>
+        /// <param name="crl"></param>
+        /// <param name="tName"></param>
+        public void CheckZidianCode(string sql,KeyValuePair<string,string> table,MainCrl crl,string tName)
         {
             AccessHelper accessHelper = new AccessHelper();
             AccessHelper ah = new AccessHelper();
@@ -169,27 +173,101 @@ namespace DataQuality.Common
                             }
                         }
 
-                        #region 废弃代码
-                        //string s = dt.Rows[i]["字段名"].ToString();
-                        //var checkTemp = from p in zbxxbTable.AsEnumerable()
-                        //                from q in zdTable.AsEnumerable()
-                        //                where !(p.Field<string>(dt.Rows[i]["字段名"].ToString()).Contains(q.Field<string>("字典代码")))
-                        //                select p;
-                        //if (checkTemp.Count() != 0)
-                        //{
-                        //    DataTable resultTable = checkTemp.Distinct().CopyToDataTable();//这里是个坑
-                        //    if (resultTable != null)
-                        //    {
-                        //        for (int j = 0; j < resultTable.Rows.Count; j++)
-                        //        {
-                        //            ComMsg.ResultShow.Add(new ResultEntity(tName, "基础指标", "130000001", "字段值在字典值域内", dt.Rows[i]["字段名"].ToString() + "字段值不在" + zdService.GetZiDianName(dt.Rows[i]["字段名"].ToString()) + "字典值域内", j + "", dt.Rows[i]["严重程度"].ToString(), DateTime.Now.ToShortDateString()));
-                        //        }
-                        //    }
-                        //}
-                        #endregion
                     }
                 }
                 
+            }
+        }
+        /// <summary>
+        /// 检查数据是否在字典表中的字典名称值域内
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="table"></param>
+        /// <param name="crl"></param>
+        /// <param name="tName"></param>
+        public void CheckZiDianName(string sql, KeyValuePair<string, string> table, MainCrl crl, string tName)
+        {
+            AccessHelper accessHelper = new AccessHelper();
+            AccessHelper ah = new AccessHelper();
+            //字段值大于等于某一字段值
+            DataTable dt = accessHelper.SelectToDataTable("select * from GuiZe where 规则类型='基础指标' and 校验类型='DICTName'");
+            if (dt.Rows.Count > 0)
+            {
+                ZiDianService zdService = new ZiDianService();
+                List<ZiDianEntity> zdList = zdService.GetZiDianList();//规则集合
+                if (table.Key.Equals("ZBXXB"))
+                {
+                    string path = table.Value;
+                    ZBXXBService zbxxbService = new ZBXXBService();
+                    List<ZBXXBEntity> zbxxbList = zbxxbService.GetZBXXBList(path);//待检查数据集合
+                    DataTable zbxxbTable = ah.SelectToDataTable("select * from ZBXXB", path);//待检查数据table
+                    DataTable zdTable = accessHelper.SelectToDataTable("select * from ZiDian");//字典表
+                    for (int i = 0; i < dt.Rows.Count; i++)//需要检查字典的数据条数
+                    {
+                        List<string> codeList = zdService.GetZiDianCodeByLXBM(dt.Rows[i]["字段名"].ToString());
+                        string checkSql = "select * from ZBXXB where " + dt.Rows[i]["字段名"] + " not in (";
+                        for (int j = 0; j < codeList.Count; j++)
+                        {
+                            if (codeList.Count == 1)
+                                checkSql += "'" + codeList[j] + "'" + ")";
+                            else if (j != (codeList.Count - 1))
+                                checkSql += "'" + codeList[j] + "'" + ",";
+                            else
+                                checkSql += "'" + codeList[j] + "'" + ")";
+                        }
+                        DataTable resultTable = ah.SelectToDataTable(checkSql, path);
+                        if (resultTable != null)
+                        {
+                            for (int j = 0; j < resultTable.Rows.Count; j++)
+                            {
+                                ComMsg.ResultShow.Add(new ResultEntity(tName, "基础指标", "130000001", "字段值在字典值域内", dt.Rows[i]["字段名"].ToString() + "字段值不在" + zdService.GetZiDianName(dt.Rows[i]["字段名"].ToString()) + "字典值域内,字段值为：" + resultTable.Rows[j][dt.Rows[i]["字段名"].ToString()], j + "", dt.Rows[i]["严重程度"].ToString(), DateTime.Now.ToShortDateString()));
+                            }
+                        }
+
+                    }
+                }
+
+            }
+        }
+
+        /// <summary>
+        /// 检查指定表的逻辑关联性
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="table"></param>
+        /// <param name="crl"></param>
+        /// <param name="tName"></param>
+        public void CheckLuoJi(string sql, KeyValuePair<string, string> table, MainCrl crl, string tName)
+        {
+            AccessHelper accessHelper = new AccessHelper();
+            AccessHelper ah = new AccessHelper();
+            //字段值大于等于某一字段值
+            DataTable dt = accessHelper.SelectToDataTable("select * from GuiZe where 规则类型='逻辑关联性'");
+            if (dt.Rows.Count > 0)
+            {
+                if (table.Key.Equals("ZBXXB"))
+                {
+                    string path = table.Value;
+                    DataTable dataTable = ah.SelectToDataTable("select * from ZBXXB", path);
+                    for(int i=0;i<dt.Rows.Count;i++)
+                    {
+                        DataTable ResultTable = ah.SelectToDataTable(dt.Rows[i]["表达式"].ToString(), path);
+                        if(ResultTable.Rows.Count>0)
+                        {
+                            for (int j = 0; j < ResultTable.Rows.Count;j++ )
+                            {
+                                for (int k = 0; k < dataTable.Rows.Count;k++ )
+                                {
+                                    if (ResultTable.Rows[j]["ZDTYBM"].Equals(dataTable.Rows[k]["ZDTYBM"]))
+                                    {
+                                        ComMsg.ResultShow.Add(new ResultEntity(tName, dt.Rows[i]["规则类型"].ToString(), dt.Rows[i]["规则编号"].ToString(), dt.Rows[i]["规则名称"].ToString(),
+                        dt.Rows[i]["字段名"] + dt.Rows[i]["错误描述"].ToString(), (k + 1) + "", dt.Rows[i]["严重程度"].ToString(), DateTime.Now.ToShortDateString()));
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
 

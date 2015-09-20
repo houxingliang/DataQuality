@@ -157,3 +157,8 @@ H:\Code\DataQuality\obj\x86\Debug\DataQuality.ZBBZDPZCrl.resources
 H:\Code\DataQuality\obj\x86\Debug\DataQuality.ZDCrl.resources
 H:\Code\DataQuality\obj\x86\Debug\DataQuality.ZDFrm.resources
 H:\Code\DataQuality\obj\x86\Debug\DataQuality.csproj.GenerateResource.Cache
+F:\GitHub\DataQuality\Code\DataQuality\obj\x86\Debug\Interop.ISGlobalLib.dll
+F:\GitHub\DataQuality\Code\DataQuality\obj\x86\Debug\Interop.ISServerManagerLib.dll
+F:\GitHub\DataQuality\Code\DataQuality\obj\x86\Debug\DataQuality.csproj.ResolveComReference.cache
+F:\GitHub\DataQuality\Code\DataQuality\obj\x86\Debug\AxInterop.esriControls.dll
+F:\GitHub\DataQuality\Code\DataQuality\bin\x86\Debug\AxInterop.esriControls.dll

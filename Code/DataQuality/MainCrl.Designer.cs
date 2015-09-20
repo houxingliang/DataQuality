@@ -50,10 +50,6 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tpJCJG = new System.Windows.Forms.TabPage();
-            this.tpTXYL = new System.Windows.Forms.TabPage();
-            this.tpRZ = new System.Windows.Forms.TabPage();
-            this.rtbLog = new System.Windows.Forms.RichTextBox();
-            this.btnCheck = new System.Windows.Forms.Button();
             this.dgCheckResult = new System.Windows.Forms.DataGridView();
             this.cmXH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmCGMC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +60,12 @@
             this.cmHH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmCWDJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmJCRQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tpTXYL = new System.Windows.Forms.TabPage();
+            this.axLicenseControl1 = new AxESRI.ArcGIS.Controls.AxLicenseControl();
+            this.axMapControl1 = new AxESRI.ArcGIS.Controls.AxMapControl();
+            this.tpRZ = new System.Windows.Forms.TabPage();
+            this.rtbLog = new System.Windows.Forms.RichTextBox();
+            this.btnCheck = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -71,8 +73,11 @@
             this.tabControl1.SuspendLayout();
             this.tpCGMLJG.SuspendLayout();
             this.tpJCJG.SuspendLayout();
-            this.tpRZ.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgCheckResult)).BeginInit();
+            this.tpTXYL.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axMapControl1)).BeginInit();
+            this.tpRZ.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -294,47 +299,6 @@
             this.tpJCJG.Text = "检查结果";
             this.tpJCJG.UseVisualStyleBackColor = true;
             // 
-            // tpTXYL
-            // 
-            this.tpTXYL.Location = new System.Drawing.Point(4, 22);
-            this.tpTXYL.Name = "tpTXYL";
-            this.tpTXYL.Size = new System.Drawing.Size(958, 444);
-            this.tpTXYL.TabIndex = 2;
-            this.tpTXYL.Text = "图形预览";
-            this.tpTXYL.UseVisualStyleBackColor = true;
-            // 
-            // tpRZ
-            // 
-            this.tpRZ.Controls.Add(this.rtbLog);
-            this.tpRZ.Location = new System.Drawing.Point(4, 22);
-            this.tpRZ.Name = "tpRZ";
-            this.tpRZ.Size = new System.Drawing.Size(958, 444);
-            this.tpRZ.TabIndex = 3;
-            this.tpRZ.Text = "日志";
-            this.tpRZ.UseVisualStyleBackColor = true;
-            // 
-            // rtbLog
-            // 
-            this.rtbLog.BackColor = System.Drawing.SystemColors.InfoText;
-            this.rtbLog.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.rtbLog.ForeColor = System.Drawing.Color.LimeGreen;
-            this.rtbLog.Location = new System.Drawing.Point(2, 3);
-            this.rtbLog.Name = "rtbLog";
-            this.rtbLog.ReadOnly = true;
-            this.rtbLog.Size = new System.Drawing.Size(966, 460);
-            this.rtbLog.TabIndex = 0;
-            this.rtbLog.Text = "准备打印文档....";
-            // 
-            // btnCheck
-            // 
-            this.btnCheck.Location = new System.Drawing.Point(900, 94);
-            this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(75, 23);
-            this.btnCheck.TabIndex = 5;
-            this.btnCheck.Text = "检查";
-            this.btnCheck.UseVisualStyleBackColor = true;
-            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
-            // 
             // dgCheckResult
             // 
             this.dgCheckResult.AllowUserToAddRows = false;
@@ -415,6 +379,66 @@
             this.cmJCRQ.Name = "cmJCRQ";
             this.cmJCRQ.ReadOnly = true;
             // 
+            // tpTXYL
+            // 
+            this.tpTXYL.Controls.Add(this.axLicenseControl1);
+            this.tpTXYL.Controls.Add(this.axMapControl1);
+            this.tpTXYL.Location = new System.Drawing.Point(4, 22);
+            this.tpTXYL.Name = "tpTXYL";
+            this.tpTXYL.Size = new System.Drawing.Size(958, 444);
+            this.tpTXYL.TabIndex = 2;
+            this.tpTXYL.Text = "图形预览";
+            this.tpTXYL.UseVisualStyleBackColor = true;
+            // 
+            // axLicenseControl1
+            // 
+            this.axLicenseControl1.Enabled = true;
+            this.axLicenseControl1.Location = new System.Drawing.Point(287, 3);
+            this.axLicenseControl1.Name = "axLicenseControl1";
+            this.axLicenseControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axLicenseControl1.OcxState")));
+            this.axLicenseControl1.Size = new System.Drawing.Size(32, 32);
+            this.axLicenseControl1.TabIndex = 1;
+            // 
+            // axMapControl1
+            // 
+            this.axMapControl1.Location = new System.Drawing.Point(325, 0);
+            this.axMapControl1.Name = "axMapControl1";
+            this.axMapControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axMapControl1.OcxState")));
+            this.axMapControl1.Size = new System.Drawing.Size(265, 265);
+            this.axMapControl1.TabIndex = 0;
+            // 
+            // tpRZ
+            // 
+            this.tpRZ.Controls.Add(this.rtbLog);
+            this.tpRZ.Location = new System.Drawing.Point(4, 22);
+            this.tpRZ.Name = "tpRZ";
+            this.tpRZ.Size = new System.Drawing.Size(958, 444);
+            this.tpRZ.TabIndex = 3;
+            this.tpRZ.Text = "日志";
+            this.tpRZ.UseVisualStyleBackColor = true;
+            // 
+            // rtbLog
+            // 
+            this.rtbLog.BackColor = System.Drawing.SystemColors.InfoText;
+            this.rtbLog.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.rtbLog.ForeColor = System.Drawing.Color.LimeGreen;
+            this.rtbLog.Location = new System.Drawing.Point(2, 3);
+            this.rtbLog.Name = "rtbLog";
+            this.rtbLog.ReadOnly = true;
+            this.rtbLog.Size = new System.Drawing.Size(966, 460);
+            this.rtbLog.TabIndex = 0;
+            this.rtbLog.Text = "准备打印文档....";
+            // 
+            // btnCheck
+            // 
+            this.btnCheck.Location = new System.Drawing.Point(900, 94);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(75, 23);
+            this.btnCheck.TabIndex = 5;
+            this.btnCheck.Text = "检查";
+            this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
+            // 
             // MainCrl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -438,8 +462,11 @@
             this.tabControl1.ResumeLayout(false);
             this.tpCGMLJG.ResumeLayout(false);
             this.tpJCJG.ResumeLayout(false);
-            this.tpRZ.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgCheckResult)).EndInit();
+            this.tpTXYL.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axMapControl1)).EndInit();
+            this.tpRZ.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -480,5 +507,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cmHH;
         private System.Windows.Forms.DataGridViewTextBoxColumn cmCWDJ;
         private System.Windows.Forms.DataGridViewTextBoxColumn cmJCRQ;
+        private AxESRI.ArcGIS.Controls.AxLicenseControl axLicenseControl1;
+        private AxESRI.ArcGIS.Controls.AxMapControl axMapControl1;
     }
 }

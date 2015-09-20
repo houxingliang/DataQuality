@@ -36,10 +36,18 @@ namespace DataQuality.Common
             {
                 Level = "省级检查情况报告";
             }
+            if(level.Contains("县级"))
+            {
+                Level = "县级检查情况报告";
+            }
             //路径文件夹是国土使用权还是集体所有权
             if(p.Contains("国有"))
             {
                 Type = "GTSYQ";
+            }
+            if(p.Contains("集体"))
+            {
+                Type = "JTSYQ";
             }
             try
             {

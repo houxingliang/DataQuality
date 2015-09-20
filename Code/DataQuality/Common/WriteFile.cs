@@ -66,6 +66,7 @@ namespace DataQuality.Common
             Microsoft.Office.Interop.Excel.Worksheet sheetMuLu = null;//引用工作表-目录完整性
             Microsoft.Office.Interop.Excel.Worksheet sheetZhiBiao = null;//应用工作表-结构符合性
             Microsoft.Office.Interop.Excel.Worksheet sheetJiChu = null;//引用工作表-基础指标
+            Microsoft.Office.Interop.Excel.Worksheet sheetLuoJi = null;//引用工作表-逻辑关联性
             try
             {
                 excelApp = new Microsoft.Office.Interop.Excel.Application();
@@ -127,12 +128,23 @@ namespace DataQuality.Common
                     sheetJiChu.Cells[8][i + 2] = jichuList[i].Cwdj;
                     sheetJiChu.Cells[9][i + 2] = jichuList[i].Jcrq;
                 }
-                    /***************************此处预留其它检查类型******************************************/
-
-
-
-                    /*********************************************************************/
-
+                sheetLuoJi = (Worksheet)workBook.Worksheets[4];
+                var luoji = from p in ComMsg.ResultShow
+                            where p.Gzlx.Equals("逻辑关联性")
+                            select p;
+                List<ResultEntity> luojiList = luoji.ToList();
+                for(int i=0;i<luojiList.Count;i++)
+                {
+                    sheetLuoJi.Cells[1][i + 2] = (i + 1).ToString();//第一列，第(i+2)行
+                    sheetLuoJi.Cells[2][i + 2] = luojiList[i].Cgmc;
+                    sheetLuoJi.Cells[3][i + 2] = luojiList[i].Gzlx;
+                    sheetLuoJi.Cells[4][i + 2] = luojiList[i].Gzbh;
+                    sheetLuoJi.Cells[5][i + 2] = luojiList[i].Gzmc;
+                    sheetLuoJi.Cells[6][i + 2] = luojiList[i].Cwms;
+                    sheetLuoJi.Cells[7][i + 2] = luojiList[i].Hh;
+                    sheetLuoJi.Cells[8][i + 2] = luojiList[i].Cwdj;
+                    sheetLuoJi.Cells[9][i + 2] = luojiList[i].Jcrq;
+                }
                 //汇总表格
                 Microsoft.Office.Interop.Excel.Worksheet shetHuiZong = null;
                 shetHuiZong = (Worksheet)workBook.Worksheets[6];
